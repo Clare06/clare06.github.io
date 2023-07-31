@@ -1,0 +1,24 @@
+{
+  "name": "nishoban-sass-portfolio",
+  "version": "1.0.0",
+  "description": "nishoban's personal portfolio",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clare06/portfolio.git"
+  },
+  "keywords": [
+    "sass",
+    "nishoban",
+    "portfolio"
+  ],
+  "author": "nishoban",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Clare06/portfolio/issues"
+  },
+  "homepage": "https://github.com/Clare06/portfolio#readme"
+}
