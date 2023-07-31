@@ -1,0 +1,12 @@
+/* reset styles here */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* SASS variables here */ /* Header styles here */
+header {
+  background-color: #007bff;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}/*# sourceMappingURL=main.css.map */
