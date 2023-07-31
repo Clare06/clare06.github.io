@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Clare06/portfolio/issues"
   },
-  "homepage": "https://github.com/Clare06/portfolio#readme"
+  "homepage": "https://github.com/Clare06/portfolio#readme",
+  "devDependencies": {
+    "sass": "^1.64.1"
+  }
 }
