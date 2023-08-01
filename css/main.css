@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  overflow: hidden; /* Hides any content that overflows the body */
+  overflow-x: hidden;
 }
 
 .bubble-container {
@@ -100,6 +100,7 @@ header {
 
 .content-body {
   position: absolute;
+  overflow: auto;
   z-index: 100;
   top: 15vh;
   width: 100%;
@@ -109,12 +110,12 @@ header {
 }
 
 .content-body-container {
-  position: absolute;
+  position: relative;
   min-width: 70vw;
   max-width: 70vw;
   min-height: 75vh;
   max-width: 75vh;
-  top: 5vh;
+  margin-top: 5vh;
   left: 15vw;
   z-index: 100;
   border-radius: 5px;
@@ -167,6 +168,18 @@ header {
 .about-me h5 {
   margin: 10px 5vw;
   text-align: left;
+}
+
+.scroll {
+  position: relative;
+  margin-top: 10vh;
+}
+
+.content-scroll-container {
+  /* Add a new container to hold the content and the scroll div */
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=main.css.map */

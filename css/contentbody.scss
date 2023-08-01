@@ -1,5 +1,6 @@
 .content-body{
 position: absolute;
+overflow: auto;
 z-index: 100;
 top: 15vh;
 width: 100%;
@@ -10,15 +11,16 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
 // background: linear-gradient(90deg, rgba(251,210,154,0.39539565826330536) 0%, rgba(236,197,216,0.44861694677871145) 100%);
 }
 .content-body-container{
-    position: absolute;
+    position: relative;
     min-width: 70vw;
     max-width: 70vw;
     min-height: 75vh;
     max-width: 75vh;
-    top: 5vh;
+    margin-top: 5vh;
     left: 15vw;
     z-index: 100;
     border-radius: 5px;
+   
     // background: rgb(191,160,175);
     // background: linear-gradient(90deg, rgba(191,160,175,0.5242471988795518) 0%, rgba(205,188,197,0.45702030812324934) 100%);
     // background: rgb(191,160,175);
@@ -70,3 +72,15 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     margin: 10px 5vw;
     text-align: left;
 }
+.scroll{
+    position: relative;
+    margin-top: 10vh;
+    
+}
+.content-scroll-container {
+    /* Add a new container to hold the content and the scroll div */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+  }
