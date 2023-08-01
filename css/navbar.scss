@@ -1,0 +1,47 @@
+.nav{
+    height: 15vh;
+    background-color: black !important;
+    color: white;
+    // margin-top: 120px;
+    // margin-left: 100px;
+    // padding-top: 10px;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 101;
+}
+.nisho{
+    position: relative;
+    width: 30vw;
+}
+.nisho h1{
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.nav-right{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.button{
+    margin: 5vh;
+    color: $button-font-color;
+    border: none;
+    background-color: $button-color;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: #E67EC7;
+    color: black;
+    transform: scale(1.1);
+}
+.button.clicked{
+    background-color: white;
+    color: black;
+}

@@ -1,12 +1,172 @@
-/* reset styles here */
 body {
   margin: 0;
-  padding: 0;
+  overflow: hidden; /* Hides any content that overflows the body */
 }
 
-/* SASS variables here */ /* Header styles here */
+.bubble-container {
+  position: relative;
+  height: calc(100vh - 1px); /* Subtract 1px to account for any possible border or gap */
+  background-color: white; /* Just for demonstration, you can set your background color */
+  z-index: 1;
+}
+
+.bubble {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: floatUp 5s infinite; /* Apply the animation to the bubbles */
+  z-index: 0;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0; /* Set left position to 0 to start from the left edge */
+  right: 0; /* Set right position to 0 to end at the right edge */
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  z-index: 99;
+}
+
+@keyframes floatUp {
+  0% {
+    bottom: 0; /* Start from the bottom of the container */
+    opacity: 1;
+  }
+  100% {
+    bottom: 100%; /* Move up by the full height of the container */
+    opacity: 1; /* Fade out at the top */
+  }
+}
+/* SASS variables here */
+/* Header styles here */
 header {
   background-color: #007bff;
   color: white;
-  font-family: "Roboto", sans-serif;
-}/*# sourceMappingURL=main.css.map */
+  font-family: Arial, sans-serif;
+}
+
+.nav {
+  height: 15vh;
+  background-color: black !important;
+  color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 101;
+}
+
+.nisho {
+  position: relative;
+  width: 30vw;
+}
+
+.nisho h1 {
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.nav-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.button {
+  margin: 5vh;
+  color: white;
+  border: none;
+  background-color: #CB3353;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #E67EC7;
+  color: black;
+  transform: scale(1.1);
+}
+
+.button.clicked {
+  background-color: white;
+  color: black;
+}
+
+.content-body {
+  position: absolute;
+  z-index: 100;
+  top: 15vh;
+  width: 100%;
+  min-height: 85vh;
+  background: rgb(251, 210, 154);
+  background: linear-gradient(90deg, rgba(251, 210, 154, 0.6222864146) 0%, rgba(236, 197, 216, 0.5270483193) 100%);
+}
+
+.content-body-container {
+  position: absolute;
+  min-width: 70vw;
+  max-width: 70vw;
+  min-height: 75vh;
+  max-width: 75vh;
+  top: 5vh;
+  left: 15vw;
+  z-index: 100;
+  border-radius: 5px;
+  background: rgb(191, 160, 175);
+  background: linear-gradient(90deg, rgba(191, 160, 175, 0.9360119048) 0%, rgba(191, 160, 175, 0.9332107843) 100%);
+  -webkit-box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  display: flex;
+  justify-content: space-around;
+}
+
+.prof-img {
+  padding: 15px;
+  min-width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.prof-img img {
+  width: 100%; /* Make the image width fill the container */
+  height: auto;
+  border-radius: 5px;
+}
+
+.about-me {
+  min-width: 40vw;
+  padding-top: 5vh;
+  font-family: Arial, sans-serif;
+  color: #2d0337;
+}
+
+.about-me h2 {
+  margin: 2px 5vw;
+  text-align: left;
+}
+
+.about-me p {
+  margin: 5px 5vw;
+  text-align: justify;
+  font-size: large;
+}
+
+.about-me h3 {
+  margin: 2px;
+}
+
+.about-me h5 {
+  margin: 10px 5vw;
+  text-align: left;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,72 @@
+.content-body{
+position: absolute;
+z-index: 100;
+top: 15vh;
+width: 100%;
+min-height: 85vh;
+background: rgb(251,210,154);
+background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba(236,197,216,0.5270483193277311) 100%);
+// background: rgb(251,210,154);
+// background: linear-gradient(90deg, rgba(251,210,154,0.39539565826330536) 0%, rgba(236,197,216,0.44861694677871145) 100%);
+}
+.content-body-container{
+    position: absolute;
+    min-width: 70vw;
+    max-width: 70vw;
+    min-height: 75vh;
+    max-width: 75vh;
+    top: 5vh;
+    left: 15vw;
+    z-index: 100;
+    border-radius: 5px;
+    // background: rgb(191,160,175);
+    // background: linear-gradient(90deg, rgba(191,160,175,0.5242471988795518) 0%, rgba(205,188,197,0.45702030812324934) 100%);
+    // background: rgb(191,160,175);
+    // background: linear-gradient(90deg, rgba(191,160,175,0.6474964985994398) 0%, rgba(205,188,197,0.6110819327731092) 100%);
+    // background: rgb(191,160,175);
+    // background: linear-gradient(90deg, rgba(191,160,175,0.7791491596638656) 0%, rgba(191,160,175,0.8547794117647058) 100%);
+    background: rgb(191,160,175);
+    background: linear-gradient(90deg, rgba(191,160,175,0.9360119047619048) 0%, rgba(191,160,175,0.9332107843137255) 100%);
+    -webkit-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+    -moz-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+    box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+    display: flex;
+    justify-content: space-around;
+}
+.prof-img{
+    padding: 15px;
+    min-width: 30vw;
+    // max-width: 30vw;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    overflow: hidden;
+}
+.prof-img img{
+    width: 100%; /* Make the image width fill the container */
+    height: auto;
+    border-radius: 5px;
+}
+.about-me{
+    min-width: 40vw;
+    padding-top: 5vh;
+    font-family: $font-family;
+    color: $font-about-color;
+    
+}
+.about-me h2{
+    margin: 2px 5vw;
+    text-align: left;
+}
+.about-me p{
+    margin: 5px 5vw;
+    text-align: justify;
+    font-size:large;
+}
+.about-me h3{
+    margin: 2px;
+}
+.about-me h5{
+    margin: 10px 5vw;
+    text-align: left;
+}
