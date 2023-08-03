@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxAnimationDelay = 10; // Change this to control the maximum delay in seconds
   
     const colorOptions = ["#EAC444", "#345894", "#5CCFA5", "#CB3353", "#EC4B3A"];
+    const bubbleNames = ["Angular", "Spring Boot", "MySQL", "PHP", "C", "Java", "REST"];
+
 
   for (let i = 0; i < numberOfBubbles; i++) {
     const bubble = document.createElement("div");
@@ -22,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Randomly select the horizontal position on the left or right side
     bubble.style.left = Math.random() < 0.5 ? `${Math.random() * (100 - randomSize)}%` : `calc(100% - ${Math.random() * (100 - randomSize)}%)`;
     bubble.style.animationDelay = `${Math.random() * maxAnimationDelay}s`; // Random animation delay up to the specified maximum
+    bubble.innerText = bubbleNames[i % bubbleNames.length]; // This line adds the name inside the bubble
 
     bubbleContainer.appendChild(bubble);
   }

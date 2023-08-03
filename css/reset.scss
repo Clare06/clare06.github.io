@@ -19,6 +19,12 @@ body {
   // background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
   animation: floatUp 5s infinite; /* Apply the animation to the bubbles */
   z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+  font-weight: bold;
+  color: white;
 }
 .content {
   position: absolute;
