@@ -88,5 +88,39 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     display: flex;
     align-items: center;
     flex-direction: column;
-    
+    font-family: $font-family;
+    color: $font-about-color;    
+}
+.projects{
+    margin-top: 5vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    div {
+        width: 25%;
+        min-height: 300px;
+        max-height: 300px;
+        -webkit-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+        -moz-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+        box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+        border-radius: 5px;
+        background: rgb(191, 160, 175);
+        background: linear-gradient(90deg, rgba(191, 160, 175, 1) 0%, rgba(191, 160, 175, 1) 100%);
+    }
+}
+.achievement{
+    margin-top: 5vh;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    div {
+        background-color: white;
+        width: 90%;
+        height: 300px;
+    }
+    h1 {
+        font-family: $font-family ;
+        color: $font-about-color;
+    }
 }

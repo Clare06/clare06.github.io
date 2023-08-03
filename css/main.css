@@ -190,6 +190,43 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
+  font-family: Arial, sans-serif;
+  color: #2d0337;
+}
+
+.projects {
+  margin-top: 5vh;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.projects div {
+  width: 25%;
+  min-height: 300px;
+  max-height: 300px;
+  -webkit-box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  -moz-box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  border-radius: 5px;
+  background: rgb(191, 160, 175);
+  background: linear-gradient(90deg, rgb(191, 160, 175) 0%, rgb(191, 160, 175) 100%);
+}
+
+.achievement {
+  margin-top: 5vh;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.achievement div {
+  background-color: white;
+  width: 90%;
+  height: 300px;
+}
+.achievement h1 {
+  font-family: Arial, sans-serif;
+  color: #2d0337;
 }
 
 .scroll h1 {
@@ -203,6 +240,10 @@ header {
   color: #2d0337;
   font-family: Arial, sans-serif;
   max-width: 90%;
+}
+
+.scroll ul {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
