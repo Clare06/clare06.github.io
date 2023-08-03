@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const maxAnimationDelay = 10; // Change this to control the maximum delay in seconds
   
     const colorOptions = ["#EAC444", "#345894", "#5CCFA5", "#CB3353", "#EC4B3A"];
-    const bubbleNames = ["Angular", "Spring Boot", "MySQL", "PHP", "C", "Java", "REST"];
+    const bubbleNames = ["Angular", "Spring Boot", "MySQL", "PHP", "C", "Java", "REST", "JS"];
 
 
   for (let i = 0; i < numberOfBubbles; i++) {
