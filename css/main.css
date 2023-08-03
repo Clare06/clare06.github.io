@@ -110,6 +110,7 @@ header {
   z-index: 100;
   top: 15vh;
   width: 100%;
+  max-width: 100%;
   min-height: 85vh;
   background: rgb(251, 210, 154);
   background: linear-gradient(90deg, rgba(251, 210, 154, 0.6222864146) 0%, rgba(236, 197, 216, 0.5270483193) 100%);
@@ -176,16 +177,32 @@ header {
   text-align: left;
 }
 
-.scroll {
-  position: relative;
-  margin-top: 10vh;
-}
-
 .content-scroll-container {
   /* Add a new container to hold the content and the scroll div */
   position: relative;
   display: flex;
   flex-direction: column;
+}
+
+.scroll {
+  position: relative;
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.scroll h1 {
+  color: #2d0337;
+  font-family: Arial, sans-serif;
+}
+
+.scroll p {
+  text-align: justify;
+  font-size: large;
+  color: #2d0337;
+  font-family: Arial, sans-serif;
+  max-width: 90%;
 }
 
 /*# sourceMappingURL=main.css.map */
