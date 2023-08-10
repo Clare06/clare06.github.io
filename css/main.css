@@ -209,24 +209,40 @@ header {
   box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
   border-radius: 5px;
   background: rgb(191, 160, 175);
-  background: linear-gradient(90deg, rgb(191, 160, 175) 0%, rgb(191, 160, 175) 100%);
+  background: linear-gradient(90deg, rgba(191, 160, 175, 0.8) 0%, rgba(191, 160, 175, 0.8) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.projects p {
+  font-family: Arial, sans-serif;
+  color: #2d0337;
 }
 
 .achievement {
   margin-top: 5vh;
   position: relative;
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
   flex-direction: column;
-}
-.achievement div {
-  background-color: white;
-  width: 90%;
-  height: 300px;
 }
 .achievement h1 {
   font-family: Arial, sans-serif;
   color: #2d0337;
+}
+
+.butto_projec {
+  margin: 0 !important;
+  width: 150px !important;
+}
+
+.proh3 {
+  background: rgb(251, 204, 130);
+  background: linear-gradient(90deg, rgba(251, 204, 130, 0.681109944) 0%, rgba(251, 204, 130, 0.6643032213) 100%);
+  width: 95%;
+  margin-bottom: 20px;
 }
 
 .scroll h1 {
@@ -244,6 +260,9 @@ header {
 
 .scroll ul {
   font-size: 20px;
+}
+.scroll ul li {
+  text-align: start;
 }
 
 /*# sourceMappingURL=main.css.map */

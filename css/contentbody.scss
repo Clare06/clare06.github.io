@@ -105,22 +105,44 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
         box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
         border-radius: 5px;
         background: rgb(191, 160, 175);
-        background: linear-gradient(90deg, rgba(191, 160, 175, 1) 0%, rgba(191, 160, 175, 1) 100%);
+        background: linear-gradient(90deg, rgba(191, 160, 175, 0.8) 0%, rgba(191, 160, 175, 0.8) 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // background-color: #cdb4b6;
+       
     }
+    p {
+        font-family: $font-family;
+        // color: #0f0a19;
+        color: $font-about-color;
+    }
+    
+
 }
 .achievement{
     margin-top: 5vh;
     position: relative;
+    width: 100%;
     display: flex;
-    justify-content: space-around;
+    align-items: center;
     flex-direction: column;
-    div {
-        background-color: white;
-        width: 90%;
-        height: 300px;
-    }
+    
     h1 {
-        font-family: $font-family ;
+        font-family: $font-family;
         color: $font-about-color;
     }
+    
+    
+}
+.butto_projec{
+    margin: 0 !important; 
+    width: 150px !important;
+}
+.proh3{
+    background: rgb(251,204,130);
+    background: linear-gradient(90deg, rgba(251,204,130,0.6811099439775911) 0%, rgba(251,204,130,0.6643032212885154) 100%);
+    width: 95%;
+    margin-bottom: 20px;
 }
