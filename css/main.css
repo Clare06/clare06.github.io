@@ -209,7 +209,7 @@ header {
   box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
   border-radius: 5px;
   background: rgb(191, 160, 175);
-  background: linear-gradient(90deg, rgba(191, 160, 175, 0.8) 0%, rgba(191, 160, 175, 0.8) 100%);
+  background: linear-gradient(90deg, rgba(191, 160, 175, 0.7) 0%, rgba(191, 160, 175, 0.7) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,6 +238,11 @@ header {
   width: 150px !important;
 }
 
+.butto_projec:hover {
+  background-color: #880622 !important;
+  color: white !important;
+}
+
 .proh3 {
   background: rgb(251, 204, 130);
   background: linear-gradient(90deg, rgba(251, 204, 130, 0.681109944) 0%, rgba(251, 204, 130, 0.6643032213) 100%);
@@ -263,6 +268,40 @@ header {
 }
 .scroll ul li {
   text-align: start;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 99999;
+}
+
+.popup-content {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-20%, -49%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+.popup-content p {
+  text-align: justify;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

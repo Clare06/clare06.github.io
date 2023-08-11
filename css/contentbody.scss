@@ -105,7 +105,7 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
         box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
         border-radius: 5px;
         background: rgb(191, 160, 175);
-        background: linear-gradient(90deg, rgba(191, 160, 175, 0.8) 0%, rgba(191, 160, 175, 0.8) 100%);
+        background: linear-gradient(90deg, rgba(191, 160, 175, 0.7) 0%, rgba(191, 160, 175, 0.7) 100%);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -139,6 +139,13 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
 .butto_projec{
     margin: 0 !important; 
     width: 150px !important;
+    // background-color: #281e2f;
+    // color: #d1b4b6 !important;
+    
+}
+.butto_projec:hover{
+        background-color: #880622 !important;
+        color: white !important;
 }
 .proh3{
     background: rgb(251,204,130);

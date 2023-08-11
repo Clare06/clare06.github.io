@@ -124,14 +124,19 @@
          </div>
          <div class="projects">
             <div class="bus_security">
-              <p><strong>Security System for school students</strong></p>
-              <a><button class="button butto_projec">View Project</button></a>
+              <p><strong>Security System<br>
+                <!-- <hr> -->
+                for school students</strong></p>
+              <a><button class="button butto_projec" onclick="openPopup()">View Project</button></a>
             </div>
             <div class="rbro">
-
+              <p><strong>Ruled-Based<br>
+               Route Optimization System</strong></p>
+              <a><button class="button butto_projec" onclick="openPopup_rbro()">View Project</button></a>
             </div>
             <div class="game_website">
-
+              <p><strong>E-Sports Website</strong><br></p>
+              <a><button class="button butto_projec" onclick="openPopup_esp()">View Project</button></a>
             </div>
          </div>
       </div>
@@ -143,7 +148,50 @@
 
       </div>
     </div>
-    
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <h2>Project: Ensuring Children's Safety in School Buses and Schools</h2>
+
+        <h3>Aim:</h3>
+        <p>Design and develop a comprehensive system to enhance the safety of children who travel to school by bus.</p>
+      
+        <h3>Objectives:</h3>
+        <ol>
+          <li>Create a system utilizing RFID cards to accurately track children's presence on school buses and within the school premises.</li>
+          <li>Develop a messaging mechanism to notify parents when their children board the bus and arrive at school.</li>
+          <li>Implement an alert system to detect any children left behind on the bus after it's parked and alert the driver.</li>
+          <li>Design a door control mechanism with an ON/OFF switch for controlled access to the bus.</li>
+        </ol>
+      
+        <h3>Project Description:</h3>
+        <p>
+          The project aims to enhance the safety and security of children commuting to school by bus. It encompasses the development of a sophisticated system that ensures the well-being of students during their daily journeys. The system employs RFID technology to meticulously monitor the presence of children both on the bus and within the school premises. Timely notifications are sent to parents, offering them reassurance about their children's safety.
+        </p>
+      
+        <p>
+          My role within the project was the integration of a GSM module with Atmega 32 microcontroller. This integration empowered the system to send messages to parents and drivers, providing real-time updates on the children's whereabouts. My focal contribution was in the domain of C programming, configuring and optimizing the GSM module's functionality to facilitate seamless communication.
+        </p>
+      
+        <p>
+          Additionally, I played a key role in developing the system's user interface. Leveraging my expertise in PHP, HTML, CSS, and JavaScript, I crafted an intuitive UI that manages the database and supports overall system operations. The interface enhances efficient data management, contributing significantly to the smooth functioning of the safety system.
+        </p>
+
+        <p>
+          Github Repo: <a href="https://github.com/Clare06/BusSecurity" target="_blank">https://github.com/Clare06/BusSecurity</a>
+        </p>
+      </div>
+    </div>
+    <div id="popup_rbro" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup_rbro()">&times;</span>
+      </div>
+    </div>
+    <div id="popup_esp" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup_esp()">&times;</span>
+      </div>
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>

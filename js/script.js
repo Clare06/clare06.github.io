@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
  
   });
 
-  const button = document.querySelector(".button");
+const button = document.querySelector(".button");
 
 button.addEventListener("click", function() {
   button.classList.add("clicked");
@@ -39,5 +39,26 @@ button.addEventListener("click", function() {
     button.classList.remove("clicked");
   }, { once: true });
 });
+function openPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
+
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+function openPopup_rbro() {
+  document.getElementById('popup_rbro').style.display = 'block';
+}
+
+function closePopup_rbro() {
+  document.getElementById('popup_rbro').style.display = 'none';
+}
+function openPopup_esp() {
+  document.getElementById('popup_esp').style.display = 'block';
+}
+
+function closePopup_esp() {
+  document.getElementById('popup_esp').style.display = 'none';
+}
 
   
