@@ -295,6 +295,9 @@ header {
 .popup-content p {
   text-align: justify;
 }
+.popup-content a {
+  text-decoration: none;
+}
 
 .close-btn {
   position: absolute;
