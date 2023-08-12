@@ -110,17 +110,32 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        position: relative;
         // background-color: #cdb4b6;
-       
+          
     }
     p {
         font-family: $font-family;
         // color: #0f0a19;
         color: $font-about-color;
-    }
-    
+    }   
 
 }
+.projects div div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background:transparent !important;
+    max-height: 50px !important;
+    min-height: 50px !important;
+    width: 50px !important;
+    -webkit-box-shadow: 0 0 0 0!important;
+    -moz-box-shadow: 0 0 0 0!important;
+    box-shadow:0 0 0 0!important;
+    border-radius: 0!important;
+    
+}
+
 .achievement{
     margin-top: 5vh;
     position: relative;

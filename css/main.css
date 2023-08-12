@@ -214,10 +214,25 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 .projects p {
   font-family: Arial, sans-serif;
   color: #2d0337;
+}
+
+.projects div div {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent !important;
+  max-height: 50px !important;
+  min-height: 50px !important;
+  width: 50px !important;
+  -webkit-box-shadow: 0 0 0 0 !important;
+  -moz-box-shadow: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+  border-radius: 0 !important;
 }
 
 .achievement {
@@ -305,6 +320,18 @@ header {
   right: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.highstar {
+  color: #F9D266 !important;
+}
+
+.midstar {
+  color: #D5D4D4 !important;
+}
+
+.lowstar {
+  color: #BD9464 !important;
 }
 
 /*# sourceMappingURL=main.css.map */
