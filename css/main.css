@@ -63,6 +63,13 @@ header {
   width: 100%;
   z-index: 101;
 }
+.nav a {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+}
 
 .nisho {
   position: relative;
@@ -263,6 +270,32 @@ header {
   background: linear-gradient(90deg, rgba(251, 204, 130, 0.681109944) 0%, rgba(251, 204, 130, 0.6643032213) 100%);
   width: 95%;
   margin-bottom: 20px;
+}
+
+.contact {
+  font-family: Arial, sans-serif;
+  color: #2d0337;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contact a {
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  color: #2d0337;
+  transition: 0.2s;
+  padding: 5px;
+}
+.contact a :hover {
+  transform: scale(1.1);
+}
+.contact div {
+  display: flex;
+  justify-content: space-around;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .scroll h1 {

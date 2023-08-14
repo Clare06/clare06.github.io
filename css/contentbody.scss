@@ -168,3 +168,35 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     width: 95%;
     margin-bottom: 20px;
 }
+
+.contact {
+    // Make sure to properly define and import variables
+    font-family: $font-family;
+    color: $font-about-color;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    a {
+        text-decoration: none;
+        font-family: $font-family;
+        color: $font-about-color;
+        transition: 0.2s;
+        padding: 5px;
+
+        :hover {
+            transform: scale(1.1);
+        }
+    }
+    div {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  

@@ -9,6 +9,15 @@
     top:0;
     width: 100%;
     z-index: 101;
+    a{  
+        // margin-top: 10px;
+        padding: 10px;
+        color: white;
+        text-decoration: none;
+        font-family: $font-family;
+        font-weight: 400;
+        // background-color: rgba(32, 30, 30, 0.785);
+    }
 }
 .nisho{
     position: relative;
