@@ -298,6 +298,63 @@ html {
   scroll-behavior: smooth;
 }
 
+.who-i-am {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.gce {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.gce div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.tskill {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ts-cont {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+.ts-cont div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 300px;
+}
+
+.last-div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100% !important;
+  height: 300px;
+}
+
 .scroll h1 {
   color: #2d0337;
   font-family: Arial, sans-serif;
@@ -309,6 +366,7 @@ html {
   color: #2d0337;
   font-family: Arial, sans-serif;
   max-width: 90%;
+  line-height: 1.5;
 }
 
 .scroll ul {
@@ -316,6 +374,7 @@ html {
 }
 .scroll ul li {
   text-align: start;
+  margin-bottom: 15px;
 }
 
 .popup {

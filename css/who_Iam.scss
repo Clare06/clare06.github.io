@@ -9,10 +9,12 @@
     color: $font-about-color;
     font-family: $font-family;
     max-width: 90%;
+    line-height: 1.5;
 }
 .scroll ul {
     font-size: 20px;
     li {
         text-align: start;
+        margin-bottom: 15px;
     }
 }
