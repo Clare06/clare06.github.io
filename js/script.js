@@ -60,5 +60,20 @@ function openPopup_esp() {
 function closePopup_esp() {
   document.getElementById('popup_esp').style.display = 'none';
 }
+function openPopup_chat() {
+  document.getElementById('popup_chat').style.display = 'block';
+}
+
+function closePopup_chat() {
+  document.getElementById('popup_chat').style.display = 'none';
+}
+
+function openPopup_sm() {
+  document.getElementById('popup_sm').style.display = 'block';
+}
+
+function closePopup_sm() {
+  document.getElementById('popup_sm').style.display = 'none';
+}
 
   

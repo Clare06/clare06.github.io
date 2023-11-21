@@ -206,6 +206,7 @@ header {
   position: relative;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 .projects div {
   width: 25%;
@@ -274,10 +275,14 @@ header {
 
 .contact {
   font-family: Arial, sans-serif;
-  color: #2d0337;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
+  margin-top: 150px;
   width: 100%;
+  background-color: black;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 .contact a {
   text-decoration: none;
@@ -289,9 +294,13 @@ header {
 .contact a :hover {
   transform: scale(1.1);
 }
+.contact a:visited {
+  color: rgb(210, 136, 235); /* Color for visited links */
+}
 .contact div {
   display: flex;
   justify-content: space-around;
+  margin-top: 10px;
 }
 
 html {

@@ -96,6 +96,7 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     position: relative;
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     div {
         width: 25%;
         min-height: 300px;
@@ -172,10 +173,14 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
 .contact {
     // Make sure to properly define and import variables
     font-family: $font-family;
-    color: $font-about-color;
+    color: $font-contact-color;
     display: flex;
     flex-direction: column;
+    margin-top: 150px;
     width: 100%;
+    background-color: black;
+    padding-top: 10px;
+    padding-bottom: 20px;
 
     a {
         text-decoration: none;
@@ -188,9 +193,13 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
             transform: scale(1.1);
         }
     }
+    a:visited {
+        color: rgb(210, 136, 235); /* Color for visited links */
+      }
     div {
         display: flex;
         justify-content: space-around;
+        margin-top: 10px;
     }
     
     
