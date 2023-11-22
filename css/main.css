@@ -126,7 +126,7 @@ header {
 .dropdown {
   position: relative;
   display: flex;
-  width: 50vw;
+  width: 30vw;
   justify-content: end;
 }
 
@@ -507,7 +507,7 @@ html {
     display: none;
   }
   .nisho {
-    width: 50vw;
+    width: 70vw;
   }
   .nisho h1 {
     padding: 10px;
