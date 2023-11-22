@@ -428,6 +428,31 @@ html {
   height: 300px;
 }
 
+.mobile-prof {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center; /* Centers children horizontally */
+  align-items: center; /* Centers children vertically */
+  flex-direction: column;
+}
+
+.circle-photo {
+  width: 200px; /* Adjust size as needed */
+  height: 200px; /* Adjust size as needed */
+  border-radius: 50%; /* Creates a circle */
+  background: rgb(191, 160, 175);
+  background: linear-gradient(90deg, rgba(191, 160, 175, 0.9360119048) 0%, rgba(191, 160, 175, 0.9332107843) 100%);
+  overflow: hidden;
+  border: 2px solid white;
+}
+
+.circle-photo img {
+  margin-top: 50px;
+  width: 80%; /* Make the image width fill the container */
+  height: auto;
+  border-radius: 5px;
+}
+
 .scroll h1 {
   color: #2d0337;
   font-family: Arial, sans-serif;
@@ -515,6 +540,56 @@ html {
   }
   .nav {
     height: 80px;
+  }
+  .content-body {
+    top: 80px;
+  }
+  .content-body-container {
+    display: none;
+  }
+  .ts-cont {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .projects {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+  .projects div {
+    margin-top: 50px;
+    width: 80%;
+  }
+  .contact div {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .gce {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .gce div {
+    width: 95%;
+  }
+  .about-me {
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-me h5 {
+    text-align: center;
+  }
+  .about-me p {
+    text-align: center;
+  }
+  .about-me h2 {
+    text-align: center;
   }
 }
 /* Tablet styles */
