@@ -596,6 +596,12 @@ html {
   .about-me h2 {
     text-align: center;
   }
+  .popup-content {
+    width: 80vw;
+    height: 80vh;
+    top: 8%;
+    left: 5%;
+  }
 }
 /* Tablet styles */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
