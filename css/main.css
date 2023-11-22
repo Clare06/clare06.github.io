@@ -480,22 +480,26 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   z-index: 99999;
 }
 
 .popup-content {
   position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-20%, -49%);
+  width: 75vw;
+  max-width: 90%; /* Maximum width to maintain responsiveness */
+  height: 75vh;
+  max-height: 90%; /* Maximum height to maintain responsiveness */
+  top: 10%;
+  left: 15%;
   background-color: white;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-family: Arial, sans-serif;
+  overflow: auto;
 }
 .popup-content p {
   text-align: justify;
@@ -535,8 +539,9 @@ html {
     width: 50vw;
   }
   .nisho h1 {
+    margin-top: 5px;
     padding: 2px;
-    font-size: 20px;
+    font-size: 21px;
   }
   .nav {
     height: 80px;
