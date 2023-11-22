@@ -595,10 +595,13 @@ html {
 /* Tablet styles */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   /* Add styles for tablets here */
-  .dropdown .dropdown-content {
+  .dropdown {
     display: none;
   }
-  .dropdown .dropbtn {
+  .dropdown {
+    display: none;
+  }
+  .mobile-prof {
     display: none;
   }
 }
@@ -608,6 +611,9 @@ html {
     display: none;
   }
   .dropdown {
+    display: none;
+  }
+  .mobile-prof {
     display: none;
   }
   /* Add more styles or modify existing ones for larger screens */
