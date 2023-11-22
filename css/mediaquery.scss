@@ -1,0 +1,41 @@
+@media screen and (max-width: 768px) {
+    .bubble-container {
+      display: none;
+    }
+    .nav-right {
+      display: none;
+    }
+    .nisho{
+      width: 50vw;
+    }
+    .nisho h1{
+        padding: 10px;
+      font-size: 21px;
+    }
+    .nav{
+      height: 80px;
+    }
+    
+  }
+  
+  /* Tablet styles */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    /* Add styles for tablets here */
+    .dropdown .dropdown-content{
+        display: none;
+      }
+      .dropdown .dropbtn{
+        display: none;
+      }
+  }
+  
+  /* Larger screens (Desktop) */
+  @media screen and (min-width: 1025px) {
+    .dropdown {
+        display: none;
+      }
+      .dropdown {
+        display: none;
+      }
+    /* Add more styles or modify existing ones for larger screens */
+  }
