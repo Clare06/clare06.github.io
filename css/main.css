@@ -217,9 +217,10 @@ header {
 }
 
 .prof-img img {
-  width: 100%; /* Make the image width fill the container */
+  width: 90%; /* Make the image width fill the container */
   height: auto;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .about-me {

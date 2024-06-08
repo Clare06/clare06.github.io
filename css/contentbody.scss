@@ -46,9 +46,10 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     overflow: hidden;
 }
 .prof-img img{
-    width: 100%; /* Make the image width fill the container */
+    width: 90%; /* Make the image width fill the container */
     height: auto;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 .about-me{
     min-width: 40vw;
