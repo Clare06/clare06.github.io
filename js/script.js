@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to generate a random position within the specified areas
   function getRandomPositionInAreas() {
-    const area1Range = { min: containerWidth * 0.005, max: containerWidth * 0.15 };
+    const area1Range = { min: containerWidth * 0.005, max: containerWidth * 0.1 };
     const area2Range = { min: containerWidth * 0.75, max: containerWidth * 0.95 };
     const randomArea = Math.random() < 0.5 ? area1Range : area2Range;
     const randomXPosition = randomArea.min + Math.random() * (randomArea.max - randomArea.min);
