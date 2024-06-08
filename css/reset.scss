@@ -8,7 +8,8 @@ body {
   position: relative;
   height: calc(100vh - 1px); /* Subtract 1px to account for any possible border or gap */
   background-color: white; /* Just for demonstration, you can set your background color */
-  z-index: 1
+  z-index: 1;
+  overflow: hidden
 }
 
 .bubble {
@@ -17,7 +18,7 @@ body {
   height: 100px;
   border-radius: 50%;
   // background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
-  animation: floatUp 5s infinite; /* Apply the animation to the bubbles */
+  animation: floatUp 7s infinite; /* Apply the animation to the bubbles */
   z-index: 0;
   display: flex;
   align-items: center;
