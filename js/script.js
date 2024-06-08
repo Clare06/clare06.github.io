@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const containerWidth = bubbleContainer.offsetWidth;
   const containerHeight = bubbleContainer.offsetHeight;
   const numberOfBubbles = 24; // Change this to the desired number of bubbles
-  const maxAnimationDelay = 20; // Change this to control the maximum delay in seconds
+  const maxAnimationDelay = 30; // Change this to control the maximum delay in seconds
 
   const colorOptions = ["#EAC444", "#345894", "#5CCFA5", "#CB3353", "#EC4B3A"];
   const bubbleNames = [
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to generate a random position within the specified areas
   function getRandomPositionInAreas() {
     const area1Range = { min: containerWidth * 0.005, max: containerWidth * 0.1 };
-    const area2Range = { min: containerWidth * 0.75, max: containerWidth * 0.95 };
+    const area2Range = { min: containerWidth * 0.8, max: containerWidth * 0.95 };
     const randomArea = Math.random() < 0.5 ? area1Range : area2Range;
     const randomXPosition = randomArea.min + Math.random() * (randomArea.max - randomArea.min);
     const randomYPosition = containerHeight;
@@ -117,25 +117,30 @@ let isOldContent = true;
 let oldContent = null;
 const toggleButton = document.getElementById('toggleButton');
 const container = document.getElementById('default-theme-container');
+const spiderWebButton = document.querySelector('.spider-web-button');
 
 toggleButton.addEventListener('click', () => {
-  if (isOldContent) {
-    // Save the old content
-    oldContent = container.innerHTML;
+    container.classList.add('hidden');
 
-    // Load new content
-    fetch('spidey-index-body.html')
-      .then(response => response.text())
-      .then(data => {
-        container.innerHTML = data; // Replace the old content with the new content
-        toggleButton.textContent = 'Load Old Content';
-        isOldContent = false;
-      })
-      .catch(error => console.error('Error loading content:', error));
-  } else {
-    // Restore the old content
-    container.innerHTML = oldContent;
-    toggleButton.textContent = 'Load New Content';
-    isOldContent = true;
-  }
+    setTimeout(() => {
+        if (isOldContent) {
+            oldContent = container.innerHTML;
+
+            fetch('spidey-index-body.html')
+                .then(response => response.text())
+                .then(data => {
+                    container.innerHTML = data;
+                    spiderWebButton.style.backgroundImage = 'url("/images/back.png")'; 
+                    spiderWebButton.style.backgroundColor = '#F6E0E9';
+                    isOldContent = false;
+                    container.classList.remove('hidden');
+                })
+                .catch(error => console.error('Error loading content:', error));
+        } else {
+            container.innerHTML = oldContent;
+            spiderWebButton.style.backgroundImage = 'url("/images/1337090.jpeg")'; 
+            isOldContent = true;
+            container.classList.remove('hidden');
+        }
+    }, 250);
 });

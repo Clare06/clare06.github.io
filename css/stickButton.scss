@@ -19,4 +19,35 @@
   .stick-button:hover {
     background-color: #45a049;
   }
-  
+  .theme-container{
+    transition: opacity 0.25s ease;
+  }
+  .hidden {
+    opacity: 0;
+  }
+
+  .spider-web-button {
+    position: fixed;
+    top: 16vh;
+    right: 1vw;
+    z-index: 102;
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    // font-size: 24px;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    line-height: 75px; /* Center the text vertically */
+    background-image: url('/images/1337090.jpeg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.spider-web-button:hover {
+  transform: scale(1.1); /* Scale up the button on hover */
+}
