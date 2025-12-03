@@ -40,10 +40,13 @@
               <div class="menubar"></div>
             </button>
             <div class="dropdown-content">
-              <a href="#pro">PROJECT</a>
-              <a href="#tech">TECHNICAL</a>
-              <a href="#contact">CONTACT</a>
-              <a href="CV/Claretes Nishoban_SE.pdf" download>
+              <div class="menu-header">
+                <span class="close-menu" onclick="toggleMenu()">&times;</span>
+              </div>
+              <a href="#pro" onclick="toggleMenu()">PROJECT</a>
+              <a href="#tech" onclick="toggleMenu()">TECHNICAL</a>
+              <a href="#contact" onclick="toggleMenu()">CONTACT</a>
+              <a href="CV/Claretes Nishoban_SE.pdf" download onclick="toggleMenu()">
                 DOWNLOAD CV
               </a>
             </div>
@@ -61,15 +64,14 @@
               <br>
               <h2>Hello, I'm </h2>
               <h2>Claretes Nishoban</h2>
-              <h5>Undergraduate in Information Technology Bsc(hons)</h5>
-              <h5>Faculty of Information Technology
-              </h5>
+              <h5>BSc (Hons) Information Technology Graduate</h5>
+              <h5>Software Engineer at Ace Green B.V.</h5>
               <h5>University of Moratuwa</h5>
 
               <p>
                 <br>
-                <b>Passionate IT Student | Software Engineering Enthusiast</b><br><br>
-                A person interested in working in software engineeing and software development.
+                <b>Passionate Software Engineer | Full Stack Developer</b><br><br>
+                I am a dedicated software engineer with a passion for building robust and scalable applications.
                 <br><br>
                 <strong><i>Let's work together!</i></strong>
               </p>
@@ -80,15 +82,14 @@
               <br>
               <h2>Hello, I'm </h2>
               <h2>Claretes Nishoban</h2>
-              <h5>Undergraduate in Information Technology Bsc(hons)</h5>
-              <h5>Faculty of Information Technology
-              </h5>
+              <h5>BSc (Hons) Information Technology Graduate</h5>
+              <h5>Software Engineer at Ace Green B.V.</h5>
               <h5>University of Moratuwa</h5>
 
               <p>
                 <br>
-                <b>Passionate IT Student | Software Engineering Enthusiast</b><br><br>
-                A person interested in working in software engineeing and software development.
+                <b>Passionate Software Engineer | Full Stack Developer</b><br><br>
+                I am a dedicated software engineer with a passion for building robust and scalable applications.
                 <br><br>
                 <strong><i>Let's work together!</i></strong>
               </p>
@@ -102,208 +103,407 @@
             <div class="who-i-am">
               <h1>WHO AM I?</h1>
               <p>
-                I am a passionate software engineer with expertise in technologies like Springboot, Angular, and MySQL.
-                Additionally, I have experience working on projects involving PHP and C.
+                I am a passionate software engineer with expertise in technologies like Angular, Spring Boot, Ionic, and MySQL.
+                During my journey, I have gained extensive experience with React, Node.js, GraphQL, PostgreSQL, and AWS cloud services,
+                enhancing my ability to build scalable and robust applications.
                 <br /><br>
-                My journey into the technology world began with a love for playing games, which eventually sparked my
-                interest in software engineering. Companies like Samsung, Google, and Activision, with their innovative
-                products, further fueled my motivation to become a part of this dynamic field. Additionally, the quote
-                "Leap of faith," which I encountered in the movie "Into the Spiderverse," resonates with my approach to
-                taking on new challenges and embracing new opportunities.
+                My journey into technology began with a love for gaming, sparking my interest in software engineering.
+                I believe in taking a "Leap of faith" when facing new challenges, embracing opportunities to learn and grow.
                 <br /><br>
-                Apart from my academic and professional pursuits, I have diverse interests that keep me balanced. I
-                enjoy table tennis and chess, appreciate movies with seamless integration, love to explore new places
-                through travel, and find joy in gaming.
+                As a software engineer, I enjoy exploring innovative solutions. My experience ranges from full-stack development
+                with Spring Boot, Angular, and Ionic to microservices, event-driven architecture, and cloud technologies like AWS and Azure.
+                I am committed to delivering high-quality work and continuously expanding my skill set.
                 <br /><br>
-                As a software engineer, I am not afraid to explore unconventional approaches and seek innovative
-                solutions. My experience in PHP and C, along with my expertise in Springboot and Angular, has broadened
-                my skill set and reinforced my commitment to delivering quality work.
-                <br /><br>
-                I am excited about the endless possibilities in the world of software engineering and look forward to
-                contributing to the advancement of technology, perhaps even venturing into the fascinating domain of AI
-                in the future. Let's connect and explore the endless possibilities together!
+                I am excited about the future of technology and look forward to contributing to impactful projects.
+                Let's connect and build something great together!
               </p>
             </div>
-            <div class="grid">
 
-              <h1>EDUCATIONAL HISTORY</h1>
-
-              <h2>B.Sc. (Hons) Information Technology</h2>
-              <p>University of Moratuwa, Sri Lanka | 2021 - Present</p>
-              <div class="gce">
-                <div>
-                  <h3>G.C.E. (A/L)</h3>
-                  <p>St. Xavier's Boys' National School, Mannar | 2019</p>
-                  <p>Results: 3B</p>
-                  <ul>
-                    <li>Combined Maths - B</li>
-                    <li>Physics - B</li>
-                    <li>Chemistry - B</li>
-                    <li>General English - C</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3>G.C.E. (O/L) (Bilingual Medium)</h3>
-                  <p>St. Xavier's Boys' National School, Mannar | 2016</p>
-                  <p>Results: 7A, B, C</p>
-                  <ul>
-                    <li>Commerce - A</li>
-                    <li>ICT-A</li>
-                    <li>Science - A</li>
-                    <li>Mathematics - A</li>
-                    <li>English - A</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="tskill">
-                <h1 id="tech">Technical Skills</h1>
-                <div class="ts-cont">
-                  <div>
-                    <h3>Programming Languages</h3>
-                    <ul>
-                      <li>C</li>
-                      <li>Java</li>
-                      <li>PHP</li>
-                      <li>JavaScript</li>
-                    </ul>
+            <!-- Experience Section -->
+            <div class="experience" id="exp">
+              <h1>PROFESSIONAL EXPERIENCE</h1>
+              <div class="experience-container">
+                <!-- Current Job -->
+                <div class="exp-card ace-card">
+                  <div class="watermark-logo ace-logo"></div>
+                  <div class="exp-header">
+                    <div class="role-company">
+                      <h2>Junior Fullstack Software Engineer</h2>
+                      <h3><a href="https://www.acegreen.nl/" target="_blank">Ace Green B.V.</a></h3>
+                    </div>
+                    <div class="exp-date">Sep 2025 - Present</div>
                   </div>
-                  <div>
-                    <h3>Applications</h3>
+                  <div class="exp-details">
                     <ul>
-                      <li>IntelliJ</li>
-                      <li>VS Code</li>
-                      <li>SourceTree</li>
-                      <li>Postman</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3>Databases</h3>
-                    <ul>
-                      <li>MySQL</li>
-                      <li>MSSQL</li>
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3>Version Control</h3>
-                    <ul>
-                      <li>Git</li>
-                    </ul>
-                  </div>
-                  <div class="last-div">
-                    <h3>Web Development</h3>
-                    <ul>
-                      <li>Angular (with knowledge in REST API)</li>
-                      <li>Spring Boot (with knowledge in REST API)</li>
-                      <li>PHP Websites using MySQL, HTML, CSS, and JS
-                        <br>(Bootstrap and Angular Material UI)
-                      </li>
+                      <li>Working as a Fullstack Engineer using Angular, Ionic, and Spring Boot to build robust web and mobile applications.</li>
+                      <li>Contributed to the development of the company's proprietary product and delivered tailored solutions for client projects, ensuring high standards of code quality and performance.</li>
                     </ul>
                   </div>
                 </div>
-                <!-- <div class="proh3">
-                    
-                  </div> -->
+
+                <!-- Intern Job -->
+                <div class="exp-card gtn-card">
+                  <div class="watermark-logo gtn-logo"></div>
+                  <div class="exp-header">
+                    <div class="role-company">
+                      <h2>Intern Software Engineer</h2>
+                      <h3><a href="https://gtngroup.com/asia/about-us/locations-srilanka/" target="_blank">GTN Technologies</a></h3>
+                    </div>
+                    <div class="exp-date">March 2024 - Dec 2024</div>
+                  </div>
+                  <div class="exp-details">
+                    <ul>
+                      <li>Integrated LSEG’s World Check ONE API features in a newly launched Enterprise product using React and Node.js.</li>
+                      <li>Implemented case rescreening, re-initialized screenings, and handled production data updates with MySQL and PostgreSQL.</li>
+                      <li>Developed admin features for managing dynamic questions using React (TypeScript) and handled PII data securely.</li>
+                      <li>Contributed to micro-frontend architecture with Single-SPA and utilized AWS CloudWatch for debugging and monitoring.</li>
+                      <li>Deployed a custom symmetric encryption Node package via GitLab pipelines and managed APIs using AWS Terraform.</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
+            <!-- Education Section -->
+            <div class="education-section">
+                <h1>EDUCATIONAL HISTORY</h1>
+                <div class="edu-container">
+                    <div class="edu-card">
+                        <h2>B.Sc. (Hons) Information Technology</h2>
+                        <div class="edu-meta">
+                            <span>University of Moratuwa, Sri Lanka</span>
+                            <span>2021 - 2025</span>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <h2>G.C.E. (A/L)</h2>
+                        <div class="edu-meta">
+                            <span>St. Xavier's Boys' National School, Mannar</span>
+                            <span>2019</span>
+                        </div>
+                        <div class="results">
+                            <p>Results: 3B</p>
+                            <ul>
+                                <li>Combined Maths - B</li>
+                                <li>Physics - B</li>
+                                <li>Chemistry - B</li>
+                                <li>General English - C</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <h2>G.C.E. (O/L) (Bilingual Medium)</h2>
+                        <div class="edu-meta">
+                            <span>St. Xavier's Boys' National School, Mannar</span>
+                            <span>2016</span>
+                        </div>
+                        <div class="results">
+                            <p>Results: 7A, B, C</p>
+                            <ul>
+                                <li>Commerce - A</li>
+                                <li>ICT-A</li>
+                                <li>Science - A</li>
+                                <li>Mathematics - A</li>
+                                <li>English - A</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Section -->
+            <div class="skills-section" id="tech">
+                <h1>TECHNICAL SKILLS</h1>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages & Frameworks</h3>
+                        <div class="skill-tags">
+                            <span>Java</span>
+                            <span>JavaScript</span>
+                            <span>TypeScript</span>
+                            <span>PHP</span>
+                            <span>Angular</span>
+                            <span>React</span>
+                            <span>Ionic</span>
+                            <span>Spring Boot</span>
+                            <span>Node.js</span>
+                            <span>GraphQL</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Cloud & DevOps</h3>
+                        <div class="skill-tags">
+                            <span>AWS (Lambda, RDS)</span>
+                            <span>Azure VM</span>
+                            <span>Docker</span>
+                            <span>Jenkins</span>
+                            <span>GitLab Pipelines</span>
+                            <span>Terraform</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Databases & Tools</h3>
+                        <div class="skill-tags">
+                            <span>MySQL</span>
+                            <span>PostgreSQL</span>
+                            <span>Prisma</span>
+                            <span>IntelliJ</span>
+                            <span>VS Code</span>
+                            <span>Postman</span>
+                            <span>Git</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Specialized Skills</h3>
+                        <div class="skill-tags">
+                            <span>Microservices</span>
+                            <span>Event-Driven (Kafka)</span>
+                            <span>Serenity BDD</span>
+                            <span>REST API Design</span>
+                            <span>Security</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <h1>PROJECTS</h1>
           </div>
           <div class="projects" id="pro">
-
-
-            <div class="rbro">
-              <div>
-                <p class="highstar">&#9733;</p>
+            <!-- Parking Slot Allocation -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">🅿️</div>
               </div>
-              <p><strong>End-to-End Encrypted<br>
-                  Chat Application</strong></p>
-              <a><button class="button butto_projec" onclick="openPopup_chat()">View Project</button></a>
-            </div>
-            <div class="game_website">
-              <div>
-                <p class="highstar">&#9733;</p>
+              <div class="card-body">
+                <h3>Parking Slot Allocation Service</h3>
+                <div class="tech-tags">
+                  <span>OptaPlanner</span>
+                  <span>Spring Boot</span>
+                  <span>Java</span>
+                </div>
+                <div class="description-preview">
+                  Optimized vehicle parking solution using coordinate-based rule engines to reduce congestion.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_park()">View Project</button>
+                </div>
               </div>
-              <p><strong>Supermarket System<br>
-                  Microservice Architecture</strong><br></p>
-              <a><button class="button butto_projec" onclick="openPopup_sm()">View Project</button></a>
-            </div>
-            <div class="rbro">
-              <div>
-                <p class="highstar">&#9733;</p>
-              </div>
-              <p><strong>Ruled-Based<br>
-                  Route Optimization System</strong></p>
-              <a><button class="button butto_projec" onclick="openPopup_rbro()">View Project</button></a>
-            </div>
-          </div>
-
-
-
-          <div class="projects" id="pro">
-            <div class="bus_security">
-              <div>
-                <p class="midstar">&#9733;</p>
-              </div>
-              <p><strong>Security System<br>
-                  <!-- <hr> -->
-                  for school students</strong></p>
-              <a><button class="button butto_projec" onclick="openPopup()">View Project</button></a>
             </div>
 
-            <div class="bus_security">
-              <div>
-                <p class="midstar">&#9733;</p>
+            <!-- Chat App -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">💬</div>
               </div>
-              <p><strong>On Process</strong></p>
-              <!-- <a><button class="button butto_projec" onclick="openPopup()">View Project</button></a> -->
+              <div class="card-body">
+                <h3>End-to-End Encrypted Chat</h3>
+                <div class="tech-tags">
+                  <span>Angular</span>
+                  <span>Spring Boot</span>
+                  <span>Security</span>
+                </div>
+                <div class="description-preview">
+                  Real-time secure chat application ensuring privacy with end-to-end encryption.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_chat()">View Project</button>
+                </div>
+              </div>
             </div>
 
-            <div class="game_website">
-              <div>
-                <p class="lowstar">&#9733;</p>
+            <!-- Supermarket -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">🛒</div>
               </div>
-              <p><strong>E-Sports Website</strong><br></p>
-              <a><button class="button butto_projec" onclick="openPopup_esp()">View Project</button></a>
+              <div class="card-body">
+                <h3>Supermarket Microservices</h3>
+                <div class="tech-tags">
+                  <span>Spring Boot</span>
+                  <span>Kafka</span>
+                  <span>Eureka</span>
+                  <span>MongoDB</span>
+                </div>
+                <div class="description-preview">
+                  Scalable microservices architecture for inventory, users, and order management.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_sm()">View Project</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Route Optimization -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">🚚</div>
+              </div>
+              <div class="card-body">
+                <h3>Route Optimization System</h3>
+                <div class="tech-tags">
+                  <span>Angular</span>
+                  <span>Spring Boot</span>
+                  <span>MySQL</span>
+                </div>
+                <div class="description-preview">
+                  Rule-based system to optimize goods delivery routes for efficiency and cost reduction.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_rbro()">View Project</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Travel Recommendation -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">✈️</div>
+              </div>
+              <div class="card-body">
+                <h3>Travel Recommendation System</h3>
+                <div class="tech-tags">
+                  <span>NLP</span>
+                  <span>Machine Learning</span>
+                  <span>Python</span>
+                </div>
+                <div class="description-preview">
+                  Personalized travel recommender based on sentiment analysis of user reviews.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_travel()">View Project</button>
+                </div>
+              </div>
+            </div>
+
+             <!-- Test Automation -->
+             <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">🤖</div>
+              </div>
+              <div class="card-body">
+                <h3>Test Automation Framework</h3>
+                <div class="tech-tags">
+                  <span>Serenity BDD</span>
+                  <span>Cucumber</span>
+                  <span>Jenkins</span>
+                </div>
+                <div class="description-preview">
+                  Automated UI and API testing integrated with CI/CD pipelines for quality assurance.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_test()">View Project</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security System -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">🛡️</div>
+              </div>
+              <div class="card-body">
+                <h3>Student Security System</h3>
+                <div class="tech-tags">
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>Hardware</span>
+                </div>
+                <div class="description-preview">
+                  Hardware-software integration to monitor student safety on school buses and campus.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup()">View Project</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- E-Sports -->
+            <div class="project-card">
+              <div class="card-header">
+                <div class="star-rating">&#9733;</div>
+                <div class="icon-container">🎮</div>
+              </div>
+              <div class="card-body">
+                <h3>E-Sports Platform</h3>
+                <div class="tech-tags">
+                  <span>PHP</span>
+                  <span>MySQL</span>
+                  <span>HTML/CSS</span>
+                </div>
+                <div class="description-preview">
+                  Community platform for gamers to register for events and manage profiles.
+                </div>
+                <div class="card-footer">
+                  <button onclick="openPopup_esp()">View Project</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="contact" id="contact">
-          <h1>CONTACT ME</h1>
-          <div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                class="bi bi-github icon" viewBox="0 0 16 16">
-                <path
-                  d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg> <a href="https://github.com/Clare06" target="_blank"> GitHub</a>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-              </svg> +94719286089
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-linkedin"
-                viewBox="0 0 16 16">
-                <path
-                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
-              </svg> <a href="https://www.linkedin.com/in/claretes-nishoban-727036232" target="_blank"> LinkedIn</a>
-            </div>
-            <div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                class="bi bi-envelope-at-fill" viewBox="0 0 16 16">
-                <path
-                  d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2H2Zm-2 9.8V4.698l5.803 3.546L0 11.801Zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586l-1.239-.757ZM16 9.671V4.697l-5.803 3.546.338.208A4.482 4.482 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671Z" />
-                <path
-                  d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034v.21Zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791Z" />
-              </svg> &nbsp;charles.nishoban@gmail.com
-            </div>
-          </div>
         </div>
-
       </div>
+
+      <!-- Footer Section -->
+      <footer class="footer" id="contact">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h2>About Me</h2>
+            <p>
+              I am a passionate Software Engineer dedicated to building robust and scalable applications.
+              Always eager to learn new technologies and take on new challenges.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                  <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                </svg>
+                <a href="mailto:charles.nishoban@gmail.com">charles.nishoban@gmail.com</a>
+              </div>
+              <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                </svg>
+                <span>+94 71 928 6089</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h2>Connect</h2>
+            <div class="social-links">
+              <a href="https://github.com/Clare06" target="_blank" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/claretes-nishoban-727036232" target="_blank" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Claretes Nishoban. All Rights Reserved.</p>
+        </div>
+      </footer>
     </div>
     <div id="popup" class="popup">
       <div class="popup-content">
@@ -350,6 +550,57 @@
         <p>
           <strong>Git Repository: </strong><a href="https://github.com/Clare06/BusSecurity" target="_blank">View on
             GitHub</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Parking Slot Popup -->
+    <div id="popup_park" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup_park()">&times;</span>
+        <h2>Parking Slot Allocation Service – Rule Engine</h2>
+        <h3>Technology: OptaPlanner, Spring Boot</h3>
+        <p>
+            Developed a service that provides an optimized vehicle parking solution using coordinates.
+            This system efficiently allocates parking slots based on availability and vehicle size, reducing
+            congestion and improving user convenience.
+        </p>
+        <p>
+          <strong>Git Repository: </strong><a href="https://github.com/Clare06" target="_blank">View on GitHub</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Travel Recommendation Popup -->
+    <div id="popup_travel" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup_travel()">&times;</span>
+        <h2>Travel Recommendation System – Research (NLP)</h2>
+        <h3>Technology: NLP, Machine Learning</h3>
+        <p>
+            Developing a travel recommender system using review-based sentiment and emotion analysis.
+            The system analyzes user reviews to provide personalized travel recommendations, enhancing the
+            decision-making process for travelers.
+        </p>
+        <p>
+          <strong>Git Repository: </strong><a href="https://github.com/Clare06" target="_blank">View on GitHub</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Test Automation Popup -->
+    <div id="popup_test" class="popup">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePopup_test()">&times;</span>
+        <h2>Test Automation with Serenity BDD & Cucumber</h2>
+        <h3>Technology: Serenity BDD, Cucumber, Jenkins</h3>
+        <p>
+            Developed UI and API automation using Serenity BDD & Cucumber, integrated with GitHub webhooks and Jenkins
+            SCM polling for automated builds. This ensures high code quality and faster release cycles through
+            continuous testing.
+        </p>
+        <p>
+          <strong>Git Repository: </strong><a href="https://github.com/Clare06" target="_blank">View on GitHub</a>
         </p>
       </div>
     </div>
