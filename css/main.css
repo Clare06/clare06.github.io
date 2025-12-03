@@ -510,12 +510,34 @@ html {
 .experience .exp-card:hover {
   transform: translateY(-5px);
 }
+.experience .exp-card .watermark-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  opacity: 0.05;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+.experience .exp-card .ace-logo {
+  background-image: url("https://www.acegreen.nl/_nuxt/logo.61a932ca.png");
+}
+.experience .exp-card .gtn-logo {
+  background-image: url("https://gtngroup.com/wp-content/themes/GTN/assets/images/logo.svg");
+}
 .experience .exp-card .exp-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 15px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 @media screen and (max-width: 768px) {
   .experience .exp-card .exp-header {
@@ -553,6 +575,10 @@ html {
   font-family: Arial, sans-serif;
   white-space: nowrap;
 }
+.experience .exp-card .exp-details {
+  position: relative;
+  z-index: 1;
+}
 .experience .exp-card .exp-details ul {
   list-style-type: disc;
   padding-left: 20px;
@@ -562,6 +588,131 @@ html {
   color: #333;
   margin-bottom: 8px;
   line-height: 1.6;
+}
+
+.projects {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  width: 90%;
+  margin: 50px auto;
+  padding-bottom: 50px;
+}
+@media screen and (max-width: 768px) {
+  .projects {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+.project-card:hover .card-header::after {
+  opacity: 1;
+}
+.project-card .card-header {
+  height: 120px;
+  background: linear-gradient(135deg, #2d0337 0%, #CB3353 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.project-card .card-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project-card .card-header .icon-container {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+.project-card .card-header .star-rating {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #FFD700;
+  font-size: 1.2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.project-card .card-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #fff;
+}
+.project-card .card-body h3 {
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  color: #2d0337;
+  margin-bottom: 10px;
+  font-weight: bold;
+  line-height: 1.4;
+  min-height: 3.6rem;
+}
+.project-card .card-body .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.project-card .card-body .tech-tags span {
+  background-color: #f0f2f5;
+  color: #555;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+.project-card .card-body .description-preview {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.project-card .card-body .card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+.project-card .card-body .card-footer button {
+  background-color: transparent;
+  color: #CB3353;
+  border: 2px solid #CB3353;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+.project-card .card-body .card-footer button:hover {
+  background-color: #CB3353;
+  color: white;
 }
 
 .popup {

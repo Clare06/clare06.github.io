@@ -9,16 +9,23 @@ document.addEventListener("DOMContentLoaded", function () {
   const bubbleNames = [
     { name: "Angular", size: "large" },
     { name: "Spring Boot", size: "large" },
-    { name: "GraphQL", size: "large" },
-    { name: "MySQL", size: "large" },
+    { name: "GraphQL", size: "medium" },
+    { name: "MySQL", size: "medium" },
+    { name: "Ionic", size: "medium" },
+    { name: "React", size: "large" },
+    { name: "NodeJS", size: "large" },
+    { name: "PostgreSQL", size: "medium" },
     { name: "Single-SPA", size: "medium" },
-    { name: "PHP", size: "medium" },
+    { name: "AWS", size: "medium" },
+    { name: "Docker", size: "small" },
+    { name: "Jenkins", size: "small" },
+    { name: "PHP", size: "small" },
     { name: "C", size: "small" },
     { name: "Java", size: "medium" },
     { name: "REST", size: "small" },
     { name: "JS", size: "small" },
-    { name: "NodeJS", size: "medium" },
-    { name: "React", size: "medium" }
+    { name: "Prisma", size: "small" },
+    { name: "Serenity", size: "small" }
   ];
 
   const bubbleSizes = {

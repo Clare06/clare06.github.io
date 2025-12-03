@@ -1,0 +1,140 @@
+// Projects section modern card design
+.projects {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    width: 90%;
+    margin: 50px auto;
+    padding-bottom: 50px;
+
+    @media screen and (max-width: 768px) {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    border: 1px solid rgba(0,0,0,0.05);
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+        .card-header {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .card-header {
+        height: 120px;
+        background: linear-gradient(135deg, #2d0337 0%, #CB3353 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .icon-container {
+            font-size: 3rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .star-rating {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #FFD700;
+            font-size: 1.2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+    }
+
+    .card-body {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        background-color: #fff;
+
+        h3 {
+            font-family: $font-family;
+            font-size: 1.3rem;
+            color: $font-about-color;
+            margin-bottom: 10px;
+            font-weight: bold;
+            line-height: 1.4;
+            min-height: 3.6rem; // ensure alignment for titles
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+
+            span {
+                background-color: #f0f2f5;
+                color: #555;
+                font-size: 0.75rem;
+                padding: 4px 10px;
+                border-radius: 15px;
+                font-family: $font-family;
+                font-weight: bold;
+            }
+        }
+
+        .description-preview {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+
+            button {
+                background-color: transparent;
+                color: $button-color;
+                border: 2px solid $button-color;
+                padding: 8px 20px;
+                border-radius: 25px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                font-family: $font-family;
+
+                &:hover {
+                    background-color: $button-color;
+                    color: white;
+                }
+            }
+        }
+    }
+}

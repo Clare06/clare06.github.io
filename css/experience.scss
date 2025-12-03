@@ -35,12 +35,37 @@
       transform: translateY(-5px);
     }
 
+    .watermark-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        opacity: 0.05;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    .ace-logo {
+        background-image: url('https://www.acegreen.nl/_nuxt/logo.61a932ca.png');
+    }
+
+    .gtn-logo {
+        background-image: url('https://gtngroup.com/wp-content/themes/GTN/assets/images/logo.svg');
+    }
+
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 15px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
 
       @media screen and (max-width: 768px) {
         flex-direction: column;
@@ -84,6 +109,8 @@
     }
 
     .exp-details {
+      position: relative;
+      z-index: 1;
       ul {
         list-style-type: disc;
         padding-left: 20px;
