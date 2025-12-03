@@ -6,19 +6,18 @@
       display: none;
     }
     .nisho{
-      width: 50vw;
+      // Width handled by flexbox in navbar.scss now
     }
     .nisho h1{
-        margin-top: 5px;
-        padding-left: 1px;
-        padding-top: 15px;
-      font-size: 23px;
+        font-size: 1.2rem; // Smaller font for mobile
+        margin-top: 0;
+        padding: 0;
     }
     .nav{
-      height: 80px;
+      height: 70px; // Slightly smaller navbar
     }
     .content-body{
-        top: 80px;
+        top: 70px;
     }
     .content-body-container{
         display: none;
@@ -28,41 +27,47 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
 
-    // .projects block REMOVED to avoid conflict with projects.scss
-
-    .contact{
-        div{
-            flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        div {
+            width: 90% !important;
+            height: auto !important; // Allow auto height
+            margin-bottom: 20px;
         }
     }
+
+    .last-div {
+        height: auto !important;
+    }
+
     .gce{
         flex-direction: column;
         align-items: center;
         justify-content: center;
         div{
-            width: 95%;
-        
+            width: 90%;
+            margin-bottom: 20px;
         }
     }
     .about-me{
-        padding-top: 0;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
 
         h5{
             text-align: center;
+            font-size: 1rem;
         }
         p{
             text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
         }
         h2{
             text-align: center;
+            font-size: 1.5rem;
         }
 
     }

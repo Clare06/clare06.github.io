@@ -48,6 +48,45 @@
       transform: translateY(-5px);
     }
 
+    // Company specific accents
+    &.ace-card {
+        border-left-color: #2ECC71;
+
+        .role-company h3 a {
+            color: #2ECC71;
+            &:hover { color: darken(#2ECC71, 15%); }
+        }
+
+        .exp-date {
+            background: rgba(#2ECC71, 0.1);
+            color: darken(#2ECC71, 10%);
+            border-color: rgba(#2ECC71, 0.2);
+        }
+
+        .exp-details ul li::before {
+            color: #2ECC71;
+        }
+    }
+
+    &.gtn-card {
+        border-left-color: #663399;
+
+        .role-company h3 a {
+            color: #663399;
+            &:hover { color: darken(#663399, 15%); }
+        }
+
+        .exp-date {
+            background: rgba(#663399, 0.1);
+            color: #663399;
+            border-color: rgba(#663399, 0.2);
+        }
+
+        .exp-details ul li::before {
+            color: #663399;
+        }
+    }
+
     .watermark-logo {
         position: absolute;
         top: 50%;
@@ -56,13 +95,13 @@
         // Bigger and spreaded
         width: 80%;
         height: 80%;
-        opacity: 0.12; // More visible
+        opacity: 0.15; // Slightly more visible as requested
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
         pointer-events: none;
         z-index: 0;
-        filter: grayscale(100%); // Optional: keep it subtle and professional
+        // filter: grayscale(100%); // Removed grayscale to show colors
         transition: opacity 0.3s ease;
     }
 

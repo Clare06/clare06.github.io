@@ -138,40 +138,7 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     margin-bottom: 20px;
 }
 
-.contact {
-    // Make sure to properly define and import variables
-    font-family: $font-family;
-    color: $font-contact-color;
-    display: flex;
-    flex-direction: column;
-    margin-top: 150px;
-    width: 100%;
-    background-color: black;
-    padding-top: 10px;
-    padding-bottom: 20px;
-
-    a {
-        text-decoration: none;
-        font-family: $font-family;
-        color: $font-contact-color;
-        transition: 0.2s;
-        padding: 5px;
-
-        :hover {
-            transform: scale(1.1);
-        }
-    }
-    a:visited {
-        color: rgb(210, 136, 235); /* Color for visited links */
-      }
-    div {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 10px;
-    }
-    
-    
-}
+// .contact styles removed and moved to footer.scss
 
 html {
     scroll-behavior: smooth;

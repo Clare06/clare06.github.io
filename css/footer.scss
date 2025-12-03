@@ -1,0 +1,136 @@
+// Footer Styles
+.footer {
+    background-color: #1a1a1a;
+    color: #f1f1f1;
+    padding: 60px 20px 20px;
+    font-family: $font-family;
+    margin-top: 100px;
+    position: relative;
+    width: 100%;
+    z-index: 101;
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 40px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 40px;
+
+        @media screen and (max-width: 768px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+
+            h2 {
+                color: $button-color; // Use the main accent color
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 40px;
+                    height: 3px;
+                    background: $button-color;
+                    margin-top: 10px;
+
+                    @media screen and (max-width: 768px) {
+                        margin: 10px auto 0;
+                    }
+                }
+            }
+
+            p {
+                line-height: 1.6;
+                color: #ccc;
+                margin-bottom: 20px;
+            }
+
+            .contact-info {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: #ccc;
+
+                    @media screen and (max-width: 768px) {
+                        justify-content: center;
+                    }
+
+                    svg {
+                        flex-shrink: 0;
+                        color: $button-color;
+                    }
+
+                    a {
+                        color: #ccc;
+                        text-decoration: none;
+                        transition: color 0.3s;
+
+                        &:hover {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .social-links {
+                display: flex;
+                gap: 15px;
+                margin-top: 20px;
+
+                @media screen and (max-width: 768px) {
+                    justify-content: center;
+                }
+
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 45px;
+                    height: 45px;
+                    background: #333;
+                    border-radius: 50%;
+                    color: white;
+                    transition: all 0.3s ease;
+                    text-decoration: none;
+
+                    &:hover {
+                        background: $button-color;
+                        transform: translateY(-3px);
+                        box-shadow: 0 5px 15px rgba(203, 51, 83, 0.4);
+                    }
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        padding-top: 20px;
+        color: #888;
+        font-size: 0.9rem;
+
+        p {
+            margin: 0;
+        }
+    }
+}

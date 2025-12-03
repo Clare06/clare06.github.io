@@ -57,15 +57,19 @@ header {
 }
 
 .nav {
-  height: 15vh;
-  background-color: black !important;
+  height: 80px;
+  background-color: #000 !important;
   color: white;
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 101;
+  z-index: 1000;
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 .nav a {
   padding: 10px;
@@ -73,110 +77,127 @@ header {
   text-decoration: none;
   font-family: Arial, sans-serif;
   font-weight: 400;
+  transition: color 0.3s;
 }
-
-.nisho {
-  position: relative;
-  width: 30vw;
+.nav a:hover {
+  color: #CB3353;
 }
 
 .nisho h1 {
   color: white;
   font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
 }
 
 .nav-right {
-  position: absolute;
-  top: 0;
-  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+@media screen and (max-width: 768px) {
+  .nav-right {
+    display: none;
+  }
 }
 
 .button {
-  margin: 5vh;
   color: white;
   border: none;
   background-color: #CB3353;
-  padding: 5px;
+  padding: 10px 20px;
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: medium;
+  font-size: 1rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .button:hover {
-  background-color: #E67EC7;
-  color: black;
-  transform: scale(1.1);
-}
-
-.button.clicked {
-  background-color: white;
-  color: black;
-}
-
-/* Hide the dropdown content by default */
-.menu .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 120px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  background-color: #d65b75;
+  color: white;
+  transform: translateY(-2px);
 }
 
 .dropdown {
-  position: relative;
-  display: flex;
-  width: 50vw;
-  justify-content: end;
+  display: none;
 }
-
-/* Style the dropdown button */
-.menu .dropbtn {
-  display: block;
-  background-color: black;
-  font-size: 25px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Display the dropdown content when the button is hovered over */
-.menu:hover .dropdown-content {
-  top: 80px;
-  right: 0;
-  display: inline;
-}
-
-/* Style the dropdown links */
-.menu .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-align: left;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-}
-
-/* Change the link's background color on hover */
-.menu .dropdown-content a:hover {
-  background-color: #f1f1f1;
-}
-
-.menubar {
-  width: 35px;
-  height: 5px;
-  background-color: rgb(255, 255, 255);
-  margin: 6px 0;
+@media screen and (max-width: 768px) {
+  .dropdown {
+    display: block;
+  }
 }
 
 .menu {
-  width: 25vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+}
+.menu .dropbtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.menu .dropbtn .menubar {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+.menu .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1a1a1a;
+  min-width: 250px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.menu .dropdown-content a {
+  color: #f1f1f1;
+  padding: 16px 20px;
+  text-decoration: none;
+  display: block;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #333;
+}
+.menu .dropdown-content a:last-child {
+  border-bottom: none;
+  background-color: #CB3353;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 5px;
+}
+.menu .dropdown-content a:hover {
+  background-color: #333;
+  color: #CB3353;
+}
+.menu .dropdown-content a:hover:last-child {
+  background-color: #a22942;
+  color: white;
+}
+.menu:hover .dropdown-content {
+  display: block;
+  animation: fadeIn 0.2s ease-in-out;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .content-body {
   position: absolute;
   overflow: auto;
@@ -306,36 +327,6 @@ header {
   background: linear-gradient(90deg, rgba(251, 204, 130, 0.681109944) 0%, rgba(251, 204, 130, 0.6643032213) 100%);
   width: 95%;
   margin-bottom: 20px;
-}
-
-.contact {
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  margin-top: 150px;
-  width: 100%;
-  background-color: black;
-  padding-top: 10px;
-  padding-bottom: 20px;
-}
-.contact a {
-  text-decoration: none;
-  font-family: Arial, sans-serif;
-  color: #ffffff;
-  transition: 0.2s;
-  padding: 5px;
-}
-.contact a :hover {
-  transform: scale(1.1);
-}
-.contact a:visited {
-  color: rgb(210, 136, 235); /* Color for visited links */
-}
-.contact div {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
 }
 
 html {
@@ -490,6 +481,40 @@ html {
 .experience .exp-card:hover {
   transform: translateY(-5px);
 }
+.experience .exp-card.ace-card {
+  border-left-color: #2ECC71;
+}
+.experience .exp-card.ace-card .role-company h3 a {
+  color: #2ECC71;
+}
+.experience .exp-card.ace-card .role-company h3 a:hover {
+  color: #208e4e;
+}
+.experience .exp-card.ace-card .exp-date {
+  background: rgba(46, 204, 113, 0.1);
+  color: #25a25a;
+  border-color: rgba(46, 204, 113, 0.2);
+}
+.experience .exp-card.ace-card .exp-details ul li::before {
+  color: #2ECC71;
+}
+.experience .exp-card.gtn-card {
+  border-left-color: #663399;
+}
+.experience .exp-card.gtn-card .role-company h3 a {
+  color: #663399;
+}
+.experience .exp-card.gtn-card .role-company h3 a:hover {
+  color: #402060;
+}
+.experience .exp-card.gtn-card .exp-date {
+  background: rgba(102, 51, 153, 0.1);
+  color: #663399;
+  border-color: rgba(102, 51, 153, 0.2);
+}
+.experience .exp-card.gtn-card .exp-details ul li::before {
+  color: #663399;
+}
 .experience .exp-card .watermark-logo {
   position: absolute;
   top: 50%;
@@ -497,13 +522,12 @@ html {
   transform: translate(-50%, -50%);
   width: 80%;
   height: 80%;
-  opacity: 0.12;
+  opacity: 0.15;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
   pointer-events: none;
   z-index: 0;
-  filter: grayscale(100%);
   transition: opacity 0.3s ease;
 }
 .experience .exp-card .ace-logo {
@@ -777,6 +801,130 @@ html {
   cursor: pointer;
 }
 
+.footer {
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  padding: 60px 20px 20px;
+  font-family: Arial, sans-serif;
+  margin-top: 100px;
+  position: relative;
+  width: 100%;
+  z-index: 101;
+}
+.footer .footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+.footer .footer-content .footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+.footer .footer-content .footer-section h2 {
+  color: #CB3353;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  position: relative;
+}
+.footer .footer-content .footer-section h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #CB3353;
+  margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-content .footer-section h2::after {
+    margin: 10px auto 0;
+  }
+}
+.footer .footer-content .footer-section p {
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+.footer .footer-content .footer-section .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.footer .footer-content .footer-section .contact-info div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ccc;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-content .footer-section .contact-info div {
+    justify-content: center;
+  }
+}
+.footer .footer-content .footer-section .contact-info div svg {
+  flex-shrink: 0;
+  color: #CB3353;
+}
+.footer .footer-content .footer-section .contact-info div a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer .footer-content .footer-section .contact-info div a:hover {
+  color: white;
+}
+.footer .footer-content .footer-section .social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-content .footer-section .social-links {
+    justify-content: center;
+  }
+}
+.footer .footer-content .footer-section .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #333;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.footer .footer-content .footer-section .social-links a:hover {
+  background: #CB3353;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(203, 51, 83, 0.4);
+}
+.footer .footer-content .footer-section .social-links a svg {
+  width: 20px;
+  height: 20px;
+}
+.footer .footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  color: #888;
+  font-size: 0.9rem;
+}
+.footer .footer-bottom p {
+  margin: 0;
+}
+
 .highstar {
   color: #F9D266 !important;
 }
@@ -796,20 +944,16 @@ html {
   .nav-right {
     display: none;
   }
-  .nisho {
-    width: 50vw;
-  }
   .nisho h1 {
-    margin-top: 5px;
-    padding-left: 1px;
-    padding-top: 15px;
-    font-size: 23px;
+    font-size: 1.2rem;
+    margin-top: 0;
+    padding: 0;
   }
   .nav {
-    height: 80px;
+    height: 70px;
   }
   .content-body {
-    top: 80px;
+    top: 70px;
   }
   .content-body-container {
     display: none;
@@ -819,10 +963,13 @@ html {
     align-items: center;
     justify-content: center;
   }
-  .contact div {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .ts-cont div {
+    width: 90% !important;
+    height: auto !important;
+    margin-bottom: 20px;
+  }
+  .last-div {
+    height: auto !important;
   }
   .gce {
     flex-direction: column;
@@ -830,23 +977,29 @@ html {
     justify-content: center;
   }
   .gce div {
-    width: 95%;
+    width: 90%;
+    margin-bottom: 20px;
   }
   .about-me {
-    padding-top: 0;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
   }
   .about-me h5 {
     text-align: center;
+    font-size: 1rem;
   }
   .about-me p {
     text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
   }
   .about-me h2 {
     text-align: center;
+    font-size: 1.5rem;
   }
   .popup-content {
     width: 80vw;
