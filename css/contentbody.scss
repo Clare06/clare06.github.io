@@ -1,26 +1,19 @@
 .content-body{
-position: absolute;
-overflow: auto;
-z-index: 100;
-top: 15vh;
-width: 100%;
-max-width: 100%;
-min-height: 85vh;
-background: rgb(251,210,154);
-background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba(236,197,216,0.5270483193277311) 100%);
-// background: rgb(251,210,154);
-// background: linear-gradient(90deg, rgba(251,210,154,0.39539565826330536) 0%, rgba(236,197,216,0.44861694677871145) 100%);
+    position: relative; // Changed from absolute
+    width: 100%;
+    margin-top: 80px; // Match navbar height
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(251,210,154,0.62) 0%, rgba(236,197,216,0.53) 100%);
+    overflow-x: hidden;
 }
+
 .content-body-container{
     position: relative;
-    min-width: 70vw;
-    max-width: 70vw;
-    min-height: 75vh;
-    max-width: 75vh;
-    margin-top: 5vh;
-    left: 15vw;
-    z-index: 100;
-    border-radius: 5px;
+    width: 70%; // Use percentage instead of vw for better containment
+    margin: 40px auto; // Centered with margin
+    padding: 20px;
+    z-index: 10;
+    border-radius: 12px;
    
     // background: rgb(191,160,175);
     // background: linear-gradient(90deg, rgba(191,160,175,0.5242471988795518) 0%, rgba(205,188,197,0.45702030812324934) 100%);
@@ -37,12 +30,10 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     justify-content: space-around;
 
     @media screen and (max-width: 768px) {
-        min-width: 90vw;
-        max-width: 90vw;
-        left: 5vw;
+        width: 95%; // Wider on mobile
+        margin: 20px auto;
         flex-direction: column;
         height: auto;
-        min-height: auto;
     }
 }
 .prof-img{

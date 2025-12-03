@@ -69,21 +69,21 @@
     }
 
     &.gtn-card {
-        border-left-color: #663399;
+        border-left-color: #007bff; // Changed to Blue as requested
 
         .role-company h3 a {
-            color: #663399;
-            &:hover { color: darken(#663399, 15%); }
+            color: #007bff;
+            &:hover { color: darken(#007bff, 15%); }
         }
 
         .exp-date {
-            background: rgba(#663399, 0.1);
-            color: #663399;
-            border-color: rgba(#663399, 0.2);
+            background: rgba(#007bff, 0.1);
+            color: #007bff;
+            border-color: rgba(#007bff, 0.2);
         }
 
         .exp-details ul li::before {
-            color: #663399;
+            color: #007bff;
         }
     }
 
@@ -111,7 +111,7 @@
     // }
 
     .ace-logo {
-        background-image: url('https://www.acegreen.nl/_nuxt/logo.61a932ca.png');
+        background-image: url('../images/acegreen_logo.png');
     }
 
     .gtn-logo {
