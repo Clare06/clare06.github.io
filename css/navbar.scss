@@ -97,18 +97,50 @@
     }
 
     .dropdown-content {
-        display: none;
+        display: block; // Always in DOM, toggled via transform/opacity
         position: absolute;
         top: 100%;
-        right: -10px; // Slightly offset to align with edge if needed, but keeping it safe
-        background-color: #1a1a1a; // Dark theme menu
+        right: -10px;
+        background-color: #1a1a1a;
         min-width: 250px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-        z-index: 1001;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        z-index: 2000; // Higher than footer
         border-radius: 8px;
         overflow: hidden;
         margin-top: 15px;
-        margin-right: 20px; // Ensure it doesn't touch the very edge
+        margin-right: 20px;
+
+        // Animation State: Hidden
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); // Smooth cubic bezier
+        pointer-events: none;
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 15px 0;
+            background: #1a1a1a;
+
+            .close-menu {
+                color: #888;
+                font-size: 24px;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: white;
+                }
+            }
+        }
 
         a {
             color: #f1f1f1;
@@ -138,13 +170,5 @@
         }
     }
 
-    &:hover .dropdown-content {
-        display: block;
-        animation: fadeIn 0.2s ease-in-out;
-    }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    // Remove Hover effect
 }
