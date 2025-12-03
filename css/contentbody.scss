@@ -1,7 +1,8 @@
 .content-body{
     position: relative; // Changed from absolute
     width: 100%;
-    margin-top: 80px; // Match navbar height
+    margin-top: 0; // Removed margin to allow background to go to top
+    padding-top: 80px; // Match navbar height
     min-height: 100vh;
     background: linear-gradient(90deg, rgba(251,210,154,0.62) 0%, rgba(236,197,216,0.53) 100%);
     overflow-x: hidden;

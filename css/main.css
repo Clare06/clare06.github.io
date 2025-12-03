@@ -208,7 +208,8 @@ header {
 .content-body {
   position: relative;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 0;
+  padding-top: 80px;
   min-height: 100vh;
   background: linear-gradient(90deg, rgba(251, 210, 154, 0.62) 0%, rgba(236, 197, 216, 0.53) 100%);
   overflow-x: hidden;
@@ -953,7 +954,7 @@ html {
   color: #f1f1f1;
   padding: 60px 20px 20px;
   font-family: Arial, sans-serif;
-  margin-top: 100px;
+  margin-top: 0;
   position: relative;
   width: 100%;
   z-index: 101;
