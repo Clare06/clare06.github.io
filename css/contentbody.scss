@@ -30,10 +30,12 @@
     justify-content: space-around;
 
     @media screen and (max-width: 768px) {
-        width: 95%; // Wider on mobile
+        width: 90%; // prevent edge touching
+        max-width: 500px; // limit width on large phones
         margin: 20px auto;
         flex-direction: column;
         height: auto;
+        padding: 15px; // Reduced padding
     }
 }
 .prof-img{

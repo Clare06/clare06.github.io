@@ -2,13 +2,20 @@
 body {
   margin: 0;
   overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .bubble-container {
-  position: relative;
-  height: calc(100vh - 1px); /* Subtract 1px to account for any possible border or gap */
-  background-color: white; /* Just for demonstration, you can set your background color */
-  z-index: 1;
+  position: fixed; /* Changed from relative to fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Behind content */
   overflow: hidden;
 }
 
@@ -17,7 +24,7 @@ body {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  animation: floatUp 7s infinite; /* Apply the animation to the bubbles */
+  animation: floatUp 7s infinite;
   z-index: 0;
   display: flex;
   align-items: center;
@@ -28,24 +35,23 @@ body {
 }
 
 .content {
-  position: absolute;
-  top: 0;
-  left: 0; /* Set left position to 0 to start from the left edge */
-  right: 0; /* Set right position to 0 to end at the right edge */
+  position: relative; /* Changed from absolute to relative */
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1; /* Above bubbles */
   text-align: center;
   color: white;
   font-size: 24px;
-  z-index: 99;
 }
 
 @keyframes floatUp {
   0% {
-    bottom: 0; /* Start from the bottom of the container */
+    bottom: -100px; /* Start below screen */
     opacity: 1;
   }
   100% {
-    bottom: 100%; /* Move up by the full height of the container */
-    opacity: 1; /* Fade out at the top */
+    bottom: 100%;
+    opacity: 0; /* Fade out */
   }
 }
 /* SASS variables here */
@@ -151,7 +157,7 @@ header {
   display: none;
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -10px;
   background-color: #1a1a1a;
   min-width: 250px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
@@ -159,6 +165,7 @@ header {
   border-radius: 8px;
   overflow: hidden;
   margin-top: 15px;
+  margin-right: 20px;
 }
 .menu .dropdown-content a {
   color: #f1f1f1;
@@ -224,10 +231,12 @@ header {
 }
 @media screen and (max-width: 768px) {
   .content-body-container {
-    width: 95%;
+    width: 90%;
+    max-width: 500px;
     margin: 20px auto;
     flex-direction: column;
     height: auto;
+    padding: 15px;
   }
 }
 
@@ -460,6 +469,12 @@ html {
   flex-direction: column;
   gap: 40px;
 }
+@media screen and (max-width: 768px) {
+  .experience .experience-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
 .experience .exp-card {
   background: white;
   border-radius: 16px;
@@ -623,6 +638,12 @@ html {
   gap: 20px;
   width: 100%;
   max-width: 800px;
+}
+@media screen and (max-width: 768px) {
+  .education-section .edu-container {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 .education-section .edu-card {
   background: rgba(255, 255, 255, 0.6);
@@ -891,8 +912,8 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   z-index: 99999;
 }

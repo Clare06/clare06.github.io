@@ -100,7 +100,7 @@
         display: none;
         position: absolute;
         top: 100%;
-        right: 0;
+        right: -10px; // Slightly offset to align with edge if needed, but keeping it safe
         background-color: #1a1a1a; // Dark theme menu
         min-width: 250px;
         box-shadow: 0 8px 16px rgba(0,0,0,0.5);
@@ -108,6 +108,7 @@
         border-radius: 8px;
         overflow: hidden;
         margin-top: 15px;
+        margin-right: 20px; // Ensure it doesn't touch the very edge
 
         a {
             color: #f1f1f1;
