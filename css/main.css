@@ -477,6 +477,93 @@ html {
   margin-bottom: 15px;
 }
 
+.experience {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5vh;
+}
+.experience h1 {
+  font-family: Arial, sans-serif;
+  color: #2d0337;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.experience .experience-container {
+  width: 90%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.experience .exp-card {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.9) 100%);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  position: relative;
+  border-left: 5px solid #CB3353;
+  transition: transform 0.3s ease;
+}
+.experience .exp-card:hover {
+  transform: translateY(-5px);
+}
+.experience .exp-card .exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 768px) {
+  .experience .exp-card .exp-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.experience .exp-card .exp-header .role-company h2 {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #2d0337;
+  margin: 0 0 5px 0;
+}
+.experience .exp-card .exp-header .role-company h3 {
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: normal;
+  margin: 0;
+}
+.experience .exp-card .exp-header .role-company h3 a {
+  text-decoration: none;
+  color: #CB3353;
+  font-weight: bold;
+}
+.experience .exp-card .exp-header .role-company h3 a:hover {
+  text-decoration: underline;
+}
+.experience .exp-card .exp-header .exp-date {
+  background-color: #CB3353;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+}
+.experience .exp-card .exp-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+.experience .exp-card .exp-details ul li {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
 .popup {
   display: none;
   position: fixed;

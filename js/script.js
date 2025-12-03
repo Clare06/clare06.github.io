@@ -113,6 +113,30 @@ function closePopup_sm() {
   document.getElementById('popup_sm').style.display = 'none';
 }
 
+function openPopup_park() {
+  document.getElementById('popup_park').style.display = 'block';
+}
+
+function closePopup_park() {
+  document.getElementById('popup_park').style.display = 'none';
+}
+
+function openPopup_travel() {
+  document.getElementById('popup_travel').style.display = 'block';
+}
+
+function closePopup_travel() {
+  document.getElementById('popup_travel').style.display = 'none';
+}
+
+function openPopup_test() {
+  document.getElementById('popup_test').style.display = 'block';
+}
+
+function closePopup_test() {
+  document.getElementById('popup_test').style.display = 'none';
+}
+
 let isOldContent = true;
 let oldContent = null;
 const toggleButton = document.getElementById('toggleButton');
