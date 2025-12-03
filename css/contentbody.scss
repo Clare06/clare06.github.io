@@ -35,6 +35,15 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
     display: flex;
     justify-content: space-around;
+
+    @media screen and (max-width: 768px) {
+        min-width: 90vw;
+        max-width: 90vw;
+        left: 5vw;
+        flex-direction: column;
+        height: auto;
+        min-height: auto;
+    }
 }
 .prof-img{
     padding: 15px;
@@ -92,51 +101,9 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     font-family: $font-family;
     color: $font-about-color;    
 }
-.projects{
-    margin-top: 5vh;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    div {
-        width: 25%;
-        min-height: 300px;
-        max-height: 300px;
-        -webkit-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-        -moz-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-        box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-        border-radius: 5px;
-        background: rgb(191, 160, 175);
-        background: linear-gradient(90deg, rgba(191, 160, 175, 0.7) 0%, rgba(191, 160, 175, 0.7) 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        // background-color: #cdb4b6;
-          
-    }
-    p {
-        font-family: $font-family;
-        // color: #0f0a19;
-        color: $font-about-color;
-    }   
 
-}
-.projects div div {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background:transparent !important;
-    max-height: 50px !important;
-    min-height: 50px !important;
-    width: 50px !important;
-    -webkit-box-shadow: 0 0 0 0!important;
-    -moz-box-shadow: 0 0 0 0!important;
-    box-shadow:0 0 0 0!important;
-    border-radius: 0!important;
-    
-}
+// REMOVED LEGACY PROJECTS STYLES
+// Handled by css/projects.scss now
 
 .achievement{
     margin-top: 5vh;

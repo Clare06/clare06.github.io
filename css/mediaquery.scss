@@ -29,17 +29,9 @@
         align-items: center;
         justify-content: center;
     }
-    .projects{
-        // display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0;
-        div{
-            margin-top: 50px;
-            width: 80%;
-        }
-    }
+
+    // .projects block REMOVED to avoid conflict with projects.scss
+
     .contact{
         div{
             flex-direction: column;

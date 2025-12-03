@@ -9,8 +9,20 @@
   h1 {
     font-family: $font-family;
     color: $font-about-color;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
+    font-size: 2rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: $button-color;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
   }
 
   .experience-container {
@@ -18,18 +30,19 @@
     max-width: 900px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
   }
 
   .exp-card {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    padding: 25px;
+    background: white;
+    border-radius: 16px;
+    // Enhanced shadow for depth
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 30px;
     position: relative;
-    border-left: 5px solid $button-color;
+    border-left: 6px solid $button-color;
     transition: transform 0.3s ease;
+    overflow: hidden; // Keep watermark inside
 
     &:hover {
       transform: translateY(-5px);
@@ -40,15 +53,23 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 200px;
-        height: 200px;
-        opacity: 0.05;
+        // Bigger and spreaded
+        width: 80%;
+        height: 80%;
+        opacity: 0.12; // More visible
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
         pointer-events: none;
         z-index: 0;
+        filter: grayscale(100%); // Optional: keep it subtle and professional
+        transition: opacity 0.3s ease;
     }
+
+    // Optional: make watermark more visible on hover if desired
+    // &:hover .watermark-logo {
+    //    opacity: 0.15;
+    // }
 
     .ace-logo {
         background-image: url('https://www.acegreen.nl/_nuxt/logo.61a932ca.png');
@@ -58,39 +79,54 @@
         background-image: url('https://gtngroup.com/wp-content/themes/GTN/assets/images/logo.svg');
     }
 
+    // Container for content to ensure readability over the logo
+    // "letters inside of i little fade side , so can capure both"
+    // I will interpret this as: Content text is sharp, but maybe the container has a slight
+    // semi-transparent background if needed, but since the logo is 0.12 opacity,
+    // simply having high contrast text is better.
+    // However, to ensure "capture both", we ensure the text doesn't block the logo completely?
+    // Text covers the logo. To see the logo *through* the text, the text needs to be transparent? No.
+    // The logo is the background.
+
+    .exp-header, .exp-details {
+      position: relative;
+      z-index: 2; // Above watermark
+    }
+
     .exp-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
 
       @media screen and (max-width: 768px) {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
       }
 
       .role-company {
         h2 {
           font-family: $font-family;
-          font-size: 1.5rem;
+          font-size: 1.6rem;
           color: $font-about-color;
-          margin: 0 0 5px 0;
+          margin: 0 0 8px 0;
+          font-weight: 700;
         }
         h3 {
             font-family: $font-family;
-            font-size: 1.2rem;
-            color: #555;
-            font-weight: normal;
+            font-size: 1.3rem;
+            color: #444;
+            font-weight: 500;
             margin: 0;
 
             a {
                 text-decoration: none;
                 color: $button-color;
-                font-weight: bold;
+                transition: color 0.2s;
+
                 &:hover {
+                    color: darken($button-color, 15%);
                     text-decoration: underline;
                 }
             }
@@ -98,28 +134,42 @@
       }
 
       .exp-date {
-        background-color: $button-color;
-        color: white;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.9rem;
+        background: rgba($button-color, 0.1);
+        color: $button-color;
+        padding: 8px 18px;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        font-weight: 600;
         font-family: $font-family;
         white-space: nowrap;
+        border: 1px solid rgba($button-color, 0.2);
       }
     }
 
     .exp-details {
-      position: relative;
-      z-index: 1;
       ul {
-        list-style-type: disc;
-        padding-left: 20px;
+        list-style-type: none; // Remove default bullets
+        padding-left: 0;
 
         li {
           font-family: $font-family;
-          color: #333;
-          margin-bottom: 8px;
-          line-height: 1.6;
+          color: rgba(0,0,0,0.85); // "Little fade side" - slightly softer than pure black
+          margin-bottom: 12px;
+          line-height: 1.7;
+          position: relative;
+          padding-left: 25px;
+          font-size: 1.05rem;
+
+          // Custom bullet
+          &::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: $button-color;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.6;
+          }
         }
       }
     }
