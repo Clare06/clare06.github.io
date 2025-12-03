@@ -229,71 +229,115 @@ header {
 
 .content-body-container {
   position: relative;
-  width: 70%;
-  margin: 40px auto;
-  padding: 20px;
+  width: 80%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 40px;
   z-index: 10;
-  border-radius: 12px;
-  background: rgb(191, 160, 175);
-  background: linear-gradient(90deg, rgba(191, 160, 175, 0.9360119048) 0%, rgba(191, 160, 175, 0.9332107843) 100%);
-  -webkit-box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
-  -moz-box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
-  box-shadow: 9px 11px 18px -7px rgba(0, 0, 0, 0.53);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
 }
 @media screen and (max-width: 768px) {
   .content-body-container {
-    width: 90%;
-    max-width: 500px;
-    margin: 20px auto;
-    flex-direction: column;
-    height: auto;
-    padding: 15px;
+    display: none;
   }
 }
 
 .prof-img {
-  padding: 15px;
-  min-width: 30vw;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
-
 .prof-img img {
-  width: 90%; /* Make the image width fill the container */
+  width: 100%;
+  max-width: 350px;
   height: auto;
-  border-radius: 5px;
-  margin-bottom: 20px;
+  border-radius: 20px;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1), -20px -20px 60px rgba(255, 255, 255, 0.5);
+  transition: transform 0.3s ease;
+}
+.prof-img img:hover {
+  transform: scale(1.02);
 }
 
 .about-me {
-  min-width: 40vw;
-  padding-top: 5vh;
+  flex: 1.2;
   font-family: Arial, sans-serif;
-  color: #2d0337;
+  color: #333;
 }
-
 .about-me h2 {
-  margin: 2px 5vw;
+  margin: 5px 0;
   text-align: left;
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2c3e50;
+  line-height: 1.1;
 }
-
-.about-me p {
-  margin: 5px 5vw;
-  text-align: justify;
-  font-size: large;
+.about-me h2:first-of-type {
+  font-size: 1.5rem;
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 10px;
 }
-
-.about-me h3 {
-  margin: 2px;
-}
-
 .about-me h5 {
-  margin: 10px 5vw;
+  margin: 15px 0 5px 0;
   text-align: left;
+  font-size: 1.2rem;
+  color: #CB3353;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about-me h5::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: #CB3353;
+}
+.about-me p {
+  margin: 25px 0;
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+.about-me p br {
+  display: none;
+}
+.about-me p b {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #222;
+}
+.about-me p strong i {
+  display: inline-block;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  background: #CB3353;
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(203, 51, 83, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.about-me p strong i:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(203, 51, 83, 0.4);
+  background: #b72e4b;
 }
 
 .content-scroll-container {
@@ -351,7 +395,46 @@ html {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.who-i-am h1 {
+  font-family: Arial, sans-serif;
+  font-size: 2.2rem;
+  color: #333;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+}
+.who-i-am h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #CB3353;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.who-i-am p {
+  font-family: Arial, sans-serif;
+  color: #444;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  text-align: justify;
+}
+@media screen and (max-width: 768px) {
+  .who-i-am p {
+    text-align: left;
+    font-size: 1rem;
+  }
 }
 
 .grid {
