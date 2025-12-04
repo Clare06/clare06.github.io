@@ -502,6 +502,11 @@ html {
   margin: 20px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
+@media screen and (min-width: 769px) {
+  .mobile-prof {
+    display: none;
+  }
+}
 .mobile-prof .circle-photo {
   width: 150px;
   height: 150px;
