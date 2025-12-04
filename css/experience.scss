@@ -123,15 +123,6 @@
         background-image: url('https://gtngroup.com/wp-content/themes/GTN/assets/images/logo.svg');
     }
 
-    // Container for content to ensure readability over the logo
-    // "letters inside of i little fade side , so can capure both"
-    // I will interpret this as: Content text is sharp, but maybe the container has a slight
-    // semi-transparent background if needed, but since the logo is 0.12 opacity,
-    // simply having high contrast text is better.
-    // However, to ensure "capture both", we ensure the text doesn't block the logo completely?
-    // Text covers the logo. To see the logo *through* the text, the text needs to be transparent? No.
-    // The logo is the background.
-
     .exp-header, .exp-details {
       position: relative;
       z-index: 2; // Above watermark
@@ -214,6 +205,56 @@
             font-size: 1.2rem;
             line-height: 1.6;
           }
+        }
+      }
+
+      // Presentation Accordion Styles
+      .presentation-toggle-container {
+        margin-top: 15px;
+        padding-left: 10px;
+
+        .presentation-toggle {
+            font-family: $font-family;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #666;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #007bff; // GTN Blue
+            }
+
+            i {
+                font-size: 0.8rem;
+                transition: transform 0.3s;
+            }
+
+            &.active i {
+                transform: rotate(180deg);
+            }
+        }
+
+        .presentation-list {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #eee;
+
+            ul li {
+                color: #555;
+                font-size: 0.95rem;
+                margin-bottom: 8px;
+
+                &::before {
+                    content: '•'; // Simple bullet for nested list
+                    color: #999;
+                    font-size: 1.2rem;
+                    top: -2px;
+                }
+            }
         }
       }
     }

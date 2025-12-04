@@ -8,6 +8,8 @@
   <title>Nishoban | Portfolio</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Added FontAwesome for minimal icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -154,11 +156,23 @@
                   <div class="exp-details">
                     <ul>
                       <li>Integrated LSEG’s World Check ONE API features in a newly launched Enterprise product using React and Node.js.</li>
-                      <li>Implemented case rescreening, re-initialized screenings, and handled production data updates with MySQL and PostgreSQL.</li>
+                      <li>Implemented case rescreening, re-initialized screenings, and handled production data updates.</li>
                       <li>Developed admin features for managing dynamic questions using React (TypeScript) and handled PII data securely.</li>
                       <li>Contributed to micro-frontend architecture with Single-SPA and utilized AWS CloudWatch for debugging and monitoring.</li>
                       <li>Deployed a custom symmetric encryption Node package via GitLab pipelines and managed APIs using AWS Terraform.</li>
                     </ul>
+                    <!-- Toggle for Presentations -->
+                    <div class="presentation-toggle-container">
+                        <a href="javascript:void(0)" class="presentation-toggle" onclick="togglePresentations(this)">
+                            View Internal Tech Talks <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <div class="presentation-list" style="display: none;">
+                            <ul>
+                                <li>API Performance Optimization</li>
+                                <li>Database Sharding Strategies</li>
+                            </ul>
+                        </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -229,6 +243,7 @@
                             <span>Spring Boot</span>
                             <span>Node.js</span>
                             <span>GraphQL</span>
+                            <span>OptaPlanner</span> <!-- Added OptaPlanner -->
                         </div>
                     </div>
 
@@ -276,8 +291,7 @@
             <!-- Parking Slot Allocation -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">🅿️</div>
+                <div class="icon-container"><i class="fas fa-parking"></i></div>
               </div>
               <div class="card-body">
                 <h3>Parking Slot Allocation Service</h3>
@@ -298,8 +312,7 @@
             <!-- Chat App -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">💬</div>
+                <div class="icon-container"><i class="fas fa-comments"></i></div>
               </div>
               <div class="card-body">
                 <h3>End-to-End Encrypted Chat</h3>
@@ -320,8 +333,7 @@
             <!-- Supermarket -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">🛒</div>
+                <div class="icon-container"><i class="fas fa-shopping-cart"></i></div>
               </div>
               <div class="card-body">
                 <h3>Supermarket Microservices</h3>
@@ -343,8 +355,7 @@
             <!-- Route Optimization -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">🚚</div>
+                <div class="icon-container"><i class="fas fa-route"></i></div>
               </div>
               <div class="card-body">
                 <h3>Route Optimization System</h3>
@@ -352,6 +363,7 @@
                   <span>Angular</span>
                   <span>Spring Boot</span>
                   <span>MySQL</span>
+                  <span>OptaPlanner</span> <!-- Added OptaPlanner -->
                 </div>
                 <div class="description-preview">
                   Rule-based system to optimize goods delivery routes for efficiency and cost reduction.
@@ -365,8 +377,7 @@
             <!-- Travel Recommendation -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">✈️</div>
+                <div class="icon-container"><i class="fas fa-plane-departure"></i></div>
               </div>
               <div class="card-body">
                 <h3>Travel Recommendation System</h3>
@@ -387,8 +398,7 @@
              <!-- Test Automation -->
              <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">🤖</div>
+                <div class="icon-container"><i class="fas fa-robot"></i></div>
               </div>
               <div class="card-body">
                 <h3>Test Automation Framework</h3>
@@ -409,8 +419,7 @@
             <!-- Security System -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">🛡️</div>
+                <div class="icon-container"><i class="fas fa-shield-alt"></i></div>
               </div>
               <div class="card-body">
                 <h3>Student Security System</h3>
@@ -431,8 +440,7 @@
             <!-- E-Sports -->
             <div class="project-card">
               <div class="card-header">
-                <div class="star-rating">&#9733;</div>
-                <div class="icon-container">🎮</div>
+                <div class="icon-container"><i class="fas fa-gamepad"></i></div>
               </div>
               <div class="card-body">
                 <h3>E-Sports Platform</h3>
