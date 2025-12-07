@@ -213,3 +213,11 @@ function toggleSpideyTheme() {
         }
     }
 }
+
+// Spidey Mobile Menu Logic
+function toggleSpideyMenu() {
+    const menu = document.getElementById('spidey-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    }
+}

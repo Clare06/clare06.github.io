@@ -1,77 +1,151 @@
-<div class="spidey-header">
-    <h1>Claretes Nishoban</h1>
-    <h2>Software Engineer / Multiverse Traveler</h2>
+<!-- Hamburger Button (Mobile Only) -->
+<button class="spidey-hamburger" id="spidey-menu-btn" onclick="toggleSpideyMenu()">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Mobile Menu Overlay -->
+<div class="spidey-menu-overlay" id="spidey-menu">
+    <a href="#spidey-intro" class="spidey-menu-link" onclick="toggleSpideyMenu()">Home</a>
+    <a href="#spidey-skills" class="spidey-menu-link" onclick="toggleSpideyMenu()">Skills</a>
+    <a href="#spidey-projects" class="spidey-menu-link" onclick="toggleSpideyMenu()">Projects</a>
+    <a href="CV/Claretes Nishoban_SE.pdf" download class="spidey-menu-btn">Download CV</a>
 </div>
 
-<div class="comic-bubble">
-    "Alright, let's do this one last time. My name is Claretes Nishoban. I was bitten by a radioactive bug... for coding."
+<div class="theme-container" id="spidey-intro">
+    <div class="spidey-header">
+        <h1 data-text="Claretes Nishoban">Claretes Nishoban</h1>
+        <h2>Software Engineer / Multiverse Traveler</h2>
+    </div>
+
+    <div class="profile-container">
+        <!-- SVG Web Background -->
+        <svg class="spider-web-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <style>
+                .web-strand { stroke: #333; stroke-width: 0.5; fill: none; }
+            </style>
+            <!-- Radial lines -->
+            <line x1="50" y1="50" x2="50" y2="5" class="web-strand"/>
+            <line x1="50" y1="50" x2="85" y2="15" class="web-strand"/>
+            <line x1="50" y1="50" x2="95" y2="50" class="web-strand"/>
+            <line x1="50" y1="50" x2="85" y2="85" class="web-strand"/>
+            <line x1="50" y1="50" x2="50" y2="95" class="web-strand"/>
+            <line x1="50" y1="50" x2="15" y2="85" class="web-strand"/>
+            <line x1="50" y1="50" x2="5" y2="50" class="web-strand"/>
+            <line x1="50" y1="50" x2="15" y2="15" class="web-strand"/>
+            <!-- Concentric webs -->
+            <polygon points="50,20 73,28 80,50 73,72 50,80 27,72 20,50 27,28" class="web-strand"/>
+            <polygon points="50,35 60,39 65,50 60,61 50,65 40,61 35,50 40,39" class="web-strand"/>
+            <polygon points="50,10 80,20 90,50 80,80 50,90 20,80 10,50 20,20" class="web-strand"/>
+        </svg>
+        <img src="images/Nisho23.png" alt="Profile" class="profile-pic">
+    </div>
+
+    <div class="comic-bubble">
+        "Alright, let's do this one last time. My name is Claretes Nishoban. I was bitten by a radioactive bug... for coding."
+    </div>
+
+    <!-- Power Stats (Education & Exp) -->
+    <div class="spidey-grid">
+        <div class="spidey-card">
+            <h3>Mission Log: Experience</h3>
+            <p><strong>Ace Green B.V.</strong> (Sep 2025 - Present)</p>
+            <p>Junior Fullstack Software Engineer. Building webs with Angular, Ionic, Spring Boot.</p>
+            <hr style="border-color: #333; border-style: dashed;">
+            <p><strong>GTN Technologies</strong> (Mar 2024 - Dec 2024)</p>
+            <p>Intern SE. Integrated LSEG APIs, Encryption, Micro-frontends.</p>
+        </div>
+
+        <div class="spidey-card">
+            <h3>Origin Story: Education</h3>
+            <p><strong>B.Sc. (Hons) Information Technology</strong></p>
+            <p>University of Moratuwa (2021 - 2025)</p>
+            <p><em>Where I learned to control my powers.</em></p>
+            <br>
+            <p><strong>High School (A/L & O/L)</strong></p>
+            <p>St. Xavier's Boys' National School</p>
+        </div>
+    </div>
+
+    <div id="spidey-skills" style="margin-top: 50px;">
+        <h2 class="section-title">Superpowers (Skills)</h2>
+        <div class="spidey-card">
+            <div class="tech-badges">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Ionic</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">OptaPlanner</span>
+                <span class="tech-badge">GraphQL</span>
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">AWS</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Microservices</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Serenity BDD</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="spidey-projects" style="margin-top: 50px;">
+        <h2 class="section-title">Web Slinging Action (Projects)</h2>
+    </div>
+
+    <div class="spidey-grid">
+        <div class="spidey-card">
+            <h3>Parking Slot Allocation</h3>
+            <p>Optimized parking using coordinate rule engines.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">OptaPlanner</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Java</span>
+            </div>
+        </div>
+        <div class="spidey-card">
+            <h3>Secure Chat App</h3>
+            <p>End-to-End Encrypted messaging platform.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Security</span>
+            </div>
+        </div>
+        <div class="spidey-card">
+            <h3>Supermarket Microservices</h3>
+            <p>Scalable architecture for inventory & orders.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">Eureka</span>
+                <span class="tech-badge">MongoDB</span>
+            </div>
+        </div>
+        <div class="spidey-card">
+            <h3>Route Optimization</h3>
+            <p>Delivery route efficiency system.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">OptaPlanner</span>
+            </div>
+        </div>
+        <div class="spidey-card">
+            <h3>Test Automation</h3>
+            <p>UI & API automation framework.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Serenity BDD</span>
+                <span class="tech-badge">Cucumber</span>
+                <span class="tech-badge">Jenkins</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="spidey-footer">
+        <p>With great power comes great responsibility... to write clean code.</p>
+        <div class="spidey-social">
+            <a href="https://github.com/Clare06" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/claretes-nishoban-727036232" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
 </div>
-
-<div class="spidey-grid">
-    <div class="spidey-card">
-        <h3>Who Am I?</h3>
-        <p>I'm a Junior Fullstack Software Engineer at Ace Green B.V. I build webs, but not the sticky kind. I use Angular, Spring Boot, and Ionic to create robust applications.</p>
-        <p>I graduated from the University of Moratuwa, and now I swing between backend and frontend technologies.</p>
-    </div>
-
-    <div class="spidey-card">
-        <h3>Power Stats</h3>
-        <ul>
-            <li><strong>Java/Spring Boot:</strong> Expert</li>
-            <li><strong>Angular/Ionic:</strong> Advanced</li>
-            <li><strong>OptaPlanner:</strong> Specialized</li>
-            <li><strong>Agility:</strong> High</li>
-        </ul>
-    </div>
-</div>
-
-<div class="spidey-grid">
-    <div class="spidey-card">
-        <h3>Latest Mission: Ace Green B.V.</h3>
-        <p><strong>Role:</strong> Junior Fullstack Software Engineer</p>
-        <p><strong>Timeline:</strong> Sep 2025 - Present</p>
-        <p>Building proprietary products and client solutions. Ensuring high standards of code quality.</p>
-    </div>
-
-    <div class="spidey-card">
-        <h3>Previous Mission: GTN Technologies</h3>
-        <p><strong>Role:</strong> Intern Software Engineer</p>
-        <p><strong>Timeline:</strong> March 2024 - Dec 2024</p>
-        <p>Integrated LSEG World Check ONE API. Dealt with encryption, micro-frontends, and cloud watch.</p>
-    </div>
-</div>
-
-<div class="spidey-header" style="margin-top: 50px;">
-    <h1>Projects</h1>
-</div>
-
-<div class="spidey-grid">
-    <div class="spidey-card">
-        <h3>Parking Slot Allocation</h3>
-        <p>OptaPlanner & Spring Boot</p>
-        <button class="spidey-btn">Inspect Gadget</button>
-    </div>
-    <div class="spidey-card">
-        <h3>Secure Chat App</h3>
-        <p>Angular & Spring Boot</p>
-        <button class="spidey-btn">Inspect Gadget</button>
-    </div>
-    <div class="spidey-card">
-        <h3>Supermarket Microservices</h3>
-        <p>Kafka & Eureka</p>
-        <button class="spidey-btn">Inspect Gadget</button>
-    </div>
-    <div class="spidey-card">
-        <h3>Route Optimization</h3>
-        <p>OptaPlanner & Angular</p>
-        <button class="spidey-btn">Inspect Gadget</button>
-    </div>
-</div>
-
-<footer class="spidey-footer">
-    <p>With great power comes great responsibility... to write clean code.</p>
-    <div class="spidey-social">
-        <a href="https://github.com/Clare06" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/claretes-nishoban-727036232" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-</footer>
