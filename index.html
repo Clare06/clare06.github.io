@@ -10,12 +10,19 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <!-- Added FontAwesome for minimal icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/spidey.css">
 </head>
 
 <body>
-  <div>
-    <!-- <button class="spider-web-button" id="toggleButton"></button> -->
+  <div id="transition-overlay">
+    <div class="halftone-bg"></div>
+    <div class="glitch-text" data-text="Deactivating Professional Protocol...">Deactivating Professional Protocol...</div>
   </div>
+
+  <button class="spidey-toggle-btn" id="spidey-toggle" aria-label="Toggle Spider-Verse Theme">
+    <i class="fas fa-spider"></i>
+  </button>
+
   <div id="default-theme-container" class="theme-container">
     <div class="bubble-container" id="bubbleContainer">
 
