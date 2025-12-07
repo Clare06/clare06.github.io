@@ -7,7 +7,7 @@
   --spidey-blue: #0066FF; /* Electric Blue */
   --spidey-card-bg: #151515;
   --spidey-font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --spidey-font-display: 'Impact', 'Oswald', 'Arial Black', sans-serif; /* Bold, Readable */
+  --spidey-font-display: 'Impact', 'Arial Black', sans-serif; /* Heavy System Sans-Serif */
 }
 
 /* Animations */
@@ -20,15 +20,6 @@
   100% { transform: skew(0deg); }
 }
 
-@keyframes glitch-anim {
-  0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
-  20% { clip-path: inset(92% 0 1% 0); transform: translate(2px, -2px); }
-  40% { clip-path: inset(43% 0 1% 0); transform: translate(-2px, 2px); }
-  60% { clip-path: inset(25% 0 58% 0); transform: translate(2px, -2px); }
-  80% { clip-path: inset(54% 0 7% 0); transform: translate(-2px, 2px); }
-  100% { clip-path: inset(58% 0 43% 0); transform: translate(2px, -2px); }
-}
-
 @keyframes text-split {
    0% { text-shadow: 2px 0 var(--spidey-red), -2px 0 var(--spidey-blue); }
    25% { text-shadow: -2px 0 var(--spidey-red), 2px 0 var(--spidey-blue); }
@@ -37,17 +28,42 @@
    100% { text-shadow: 2px 0 var(--spidey-red), -2px 0 var(--spidey-blue); }
 }
 
-@keyframes spider-drop {
-    0% { transform: translateY(-150vh); }
-    60% { transform: translateY(30px); } /* Jojo Overshoot */
-    75% { transform: translateY(-10px); }
-    90% { transform: translateY(5px); }
-    100% { transform: translateY(0); }
+/* Columbia Slice Animations */
+@keyframes slice-red {
+    0% { clip-path: inset(50% 0 30% 0); transform: translate(-5px, 0); }
+    20% { clip-path: inset(10% 0 60% 0); transform: translate(-5px, 5px); }
+    40% { clip-path: inset(80% 0 5% 0); transform: translate(-5px, -5px); }
+    60% { clip-path: inset(40% 0 40% 0); transform: translate(-5px, 5px); }
+    80% { clip-path: inset(20% 0 70% 0); transform: translate(-5px, -5px); }
+    100% { clip-path: inset(50% 0 30% 0); transform: translate(-5px, 0); }
 }
 
-@keyframes web-holder-spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes slice-cyan {
+    0% { clip-path: inset(10% 0 60% 0); transform: translate(5px, 0); }
+    20% { clip-path: inset(80% 0 5% 0); transform: translate(5px, -5px); }
+    40% { clip-path: inset(40% 0 40% 0); transform: translate(5px, 5px); }
+    60% { clip-path: inset(20% 0 70% 0); transform: translate(5px, -5px); }
+    80% { clip-path: inset(50% 0 30% 0); transform: translate(5px, 5px); }
+    100% { clip-path: inset(10% 0 60% 0); transform: translate(5px, 0); }
+}
+
+/*
+   Spider Drop Animation Sequence
+   Total Time: 1.2s
+   0-800ms: Drop to 0
+   800-1200ms: Overshoot (+20px) then settle (0)
+*/
+@keyframes spider-drop-kinetic {
+    0% { transform: translateY(-100vh); }
+    66% { transform: translateY(0); } /* ~800ms point (0.8/1.2 = 0.66) */
+    80% { transform: translateY(20px); } /* Overshoot down */
+    100% { transform: translateY(0); } /* Settle */
+}
+
+@keyframes web-pop {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0.5; }
+    60% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.0); opacity: 1; }
 }
 
 @keyframes skill-pop {
@@ -109,16 +125,30 @@
   pointer-events: all;
 }
 
+/* Tech Bleed Effect */
+.tech-bleed-span {
+    position: fixed;
+    color: #0F0; /* Terminal Green */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 1.5rem;
+    z-index: 10000; /* On top of overlay */
+    text-shadow: 0 0 5px #0F0, 0 0 10px #0F0;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Columbia Slice Glitch Text */
 .glitch-text {
   font-family: var(--spidey-font-display);
-  font-size: 3rem;
+  font-size: 4rem; /* Larger */
   font-weight: 900;
   color: #fff;
   text-align: center;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 2px;
-  animation: text-split 0.05s infinite;
+  /* No default text-shadow here, specific channels handle it */
 }
 
 .glitch-text::before,
@@ -129,19 +159,22 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #000;
+  background: #000; /* Matches BG to hide main text parts */
+  overflow: hidden;
 }
 
 .glitch-text::before {
-  left: 3px;
-  text-shadow: -2px 0 var(--spidey-red);
-  animation: glitch-anim 2s infinite linear alternate-reverse;
+  color: #f00; /* Red Channel */
+  z-index: 1;
+  animation: slice-red 2s infinite linear alternate-reverse;
+  mix-blend-mode: lighten;
 }
 
 .glitch-text::after {
-  left: -3px;
-  text-shadow: -2px 0 var(--spidey-blue);
-  animation: glitch-anim 2s infinite linear alternate-reverse;
+  color: #0ff; /* Cyan Channel */
+  z-index: 2;
+  animation: slice-cyan 2s infinite linear alternate-reverse;
+  mix-blend-mode: lighten;
 }
 
 /* Base Theme Styles */
@@ -170,6 +203,13 @@ body.spidey-mode .theme-container {
     z-index: 5;
     pointer-events: none;
     opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+    .spider-web-bg {
+        max-width: 90vw; /* Prevent overflow */
+        height: auto;
+    }
 }
 
 .spider-web-bg .web-strand {
@@ -256,7 +296,7 @@ body.spidey-mode .theme-container {
   font-weight: bold;
 }
 
-/* Profile Picture & Animation */
+/* Profile Container Area */
 .profile-container {
     display: flex;
     justify-content: center;
@@ -267,39 +307,53 @@ body.spidey-mode .theme-container {
     min-height: 250px;
 }
 
-.spidey-drop-wrapper {
-    position: relative;
-    display: inline-block;
-    transform: translateY(-150vh);
-    animation: spider-drop 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: 0.5s;
+/* The Impact Web Container */
+.impact-web-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0; /* Hidden initially */
+    pointer-events: none;
 }
 
-/* The Web Line - Permanently Visible */
-.spidey-drop-wrapper::before {
-    content: '';
+.impact-web-container.pop-in {
+    animation: web-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.geometric-web {
+    width: 100%;
+    height: 100%;
+}
+
+/* The Wrapper for Drop Animation */
+.spidey-drop-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100vh); /* Start offscreen */
+}
+
+.spidey-drop-wrapper.animate-drop {
+    animation: spider-drop-kinetic 1.2s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+/* The Web Line */
+.web-line {
     position: absolute;
     bottom: 50%;
     left: 50%;
     width: 2px;
-    height: 300vh; /* Long enough to reach top */
+    height: 150vh; /* Long enough */
     background: #fff;
     transform: translateX(-50%);
     z-index: -1;
-    box-shadow: 0 0 8px var(--spidey-cyan); /* Glow to make it stand out */
-}
-
-/* The Web Holder (Behind Profile) */
-.profile-web-holder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px; /* Larger than profile pic */
-    height: 350px;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    animation: web-holder-spin 60s linear infinite;
-    pointer-events: none;
+    box-shadow: 0 0 5px var(--spidey-cyan);
+    transition: opacity 0.1s step-end;
 }
 
 .profile-pic {
@@ -314,22 +368,10 @@ body.spidey-mode .theme-container {
 }
 
 @media (max-width: 768px) {
-    @keyframes spider-drop-mobile {
-        0% { transform: translateY(-120vh); }
-        60% { transform: translateY(20px); }
-        75% { transform: translateY(-5px); }
-        90% { transform: translateY(2px); }
-        100% { transform: translateY(0); }
-    }
+    .profile-pic { width: 150px; height: 150px; }
+    .impact-web-container { width: 250px; height: 250px; }
 
-    .spidey-drop-wrapper {
-        animation-name: spider-drop-mobile;
-    }
-
-    .profile-web-holder {
-        width: 300px;
-        height: 300px;
-    }
+    .spidey-header h1 { font-size: 2.5rem; }
 }
 
 /* Comic Bubble */
@@ -512,12 +554,14 @@ body.spidey-mode .theme-container {
 
 /* Footer */
 .spidey-footer {
+    position: relative;
     text-align: center;
     padding: 40px;
     margin-top: 50px;
     background-color: #000;
     color: var(--spidey-blue);
     border-top: 4px solid var(--spidey-red);
+    z-index: 10;
 }
 
 .spidey-social a {
