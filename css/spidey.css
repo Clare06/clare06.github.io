@@ -1,0 +1,291 @@
+/* Spidey Theme CSS */
+:root {
+  --spidey-bg: #111111;
+  --spidey-text: #eeeeee;
+  --spidey-cyan: #00F0FF;
+  --spidey-magenta: #FF0055;
+  --spidey-red: #E23636;
+  --spidey-blue: #013C86;
+  --spidey-card-bg: rgba(20, 20, 20, 0.9);
+  --spidey-font-main: 'Courier New', Courier, monospace; /* Glitchy tech feel */
+}
+
+/* Toggle Button */
+.spidey-toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  color: #333;
+  font-size: 40px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.spidey-toggle-btn i {
+  filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+}
+
+.spidey-toggle-btn:hover {
+  color: var(--spidey-red);
+  text-shadow: -2px 0 var(--spidey-cyan), 2px 0 var(--spidey-magenta);
+  animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch-skew {
+  0% { transform: skew(0deg); }
+  20% { transform: skew(-20deg); }
+  40% { transform: skew(20deg); }
+  60% { transform: skew(-10deg); }
+  80% { transform: skew(10deg); }
+  100% { transform: skew(0deg); }
+}
+
+/* Transition Overlay */
+#transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+#transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.glitch-text {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.glitch-text::before {
+  color: var(--spidey-cyan);
+  z-index: -1;
+  animation: glitch-anim-1 0.4s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  color: var(--spidey-magenta);
+  z-index: -2;
+  animation: glitch-anim-2 0.4s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 0); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, 0); }
+  40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 0); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 0); }
+  80% { clip-path: inset(10% 0 60% 0); transform: translate(-2px, 0); }
+  100% { clip-path: inset(30% 0 30% 0); transform: translate(2px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, 0); }
+  20% { clip-path: inset(30% 0 30% 0); transform: translate(-2px, 0); }
+  40% { clip-path: inset(80% 0 5% 0); transform: translate(2px, 0); }
+  60% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 0); }
+  80% { clip-path: inset(60% 0 10% 0); transform: translate(2px, 0); }
+  100% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 0); }
+}
+
+/* Halftone Pattern Effect */
+.halftone-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #333 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Spidey Theme Styles */
+body.spidey-mode {
+  background-color: var(--spidey-bg);
+  color: var(--spidey-text);
+  font-family: var(--spidey-font-main);
+  overflow-x: hidden;
+}
+
+body.spidey-mode .theme-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.spidey-header {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 2px solid var(--spidey-cyan);
+  padding-bottom: 20px;
+}
+
+.spidey-header h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: var(--spidey-red);
+  text-shadow: 4px 4px 0px #000;
+  letter-spacing: 5px;
+  transform: rotate(-2deg);
+  display: inline-block;
+  background: yellow; /* Comic style */
+  color: black;
+  padding: 10px 20px;
+  border: 3px solid black;
+  box-shadow: 10px 10px 0px var(--spidey-magenta);
+}
+
+.spidey-header h2 {
+  color: var(--spidey-cyan);
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.spidey-card {
+  background: var(--spidey-card-bg);
+  border: 2px solid var(--spidey-cyan);
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 10px 10px 0px var(--spidey-magenta);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.spidey-card:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 15px 15px 0px var(--spidey-magenta);
+}
+
+.spidey-card::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid var(--spidey-cyan);
+  border-left: 2px solid var(--spidey-cyan);
+}
+
+.spidey-card::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid var(--spidey-cyan);
+  border-right: 2px solid var(--spidey-cyan);
+}
+
+.spidey-card h3 {
+  color: var(--spidey-red);
+  font-size: 1.8rem;
+  border-bottom: 1px dashed #555;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.spidey-btn {
+  background: var(--spidey-blue);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 5px 5px 0px #000;
+  margin-top: 10px;
+}
+
+.spidey-btn:hover {
+  background: var(--spidey-red);
+}
+
+.spidey-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Comic Bubble for Intro */
+.comic-bubble {
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 50%;
+  position: relative;
+  max-width: 400px;
+  margin: 20px auto;
+  border: 3px solid black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.comic-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  border-width: 20px 20px 0;
+  border-style: solid;
+  border-color: black transparent;
+  display: block;
+  width: 0;
+}
+
+/* Spidey Footer */
+.spidey-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    background-color: #000;
+    color: var(--spidey-cyan);
+    border-top: 2px solid var(--spidey-magenta);
+}
+
+.spidey-social a {
+    color: var(--spidey-magenta);
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.spidey-social a:hover {
+    color: var(--spidey-cyan);
+}
