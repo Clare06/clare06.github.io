@@ -182,15 +182,20 @@ function loadAndTriggerSpideyEffect() {
 
     // Callback to run when script is ready
     const onScriptReady = () => {
+        // Use spidey.js to manage the timing via callback
         if (window.triggerTechGlitch) {
-            window.triggerTechGlitch();
+            window.triggerTechGlitch(() => {
+                 // On Complete (2500ms): Swap and Drop
+                 toggleSpideyTheme();
+                 setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+            });
+        } else {
+             // Fallback safety
+             setTimeout(() => {
+                toggleSpideyTheme();
+                setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+            }, 2500);
         }
-
-        // Wait 3.0s total for transition
-        setTimeout(() => {
-            toggleSpideyTheme();
-            setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
-        }, 3000);
     };
 
     if (existingScript) {

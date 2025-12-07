@@ -167,14 +167,14 @@
   color: #f00; /* Red Channel */
   z-index: 1;
   animation: slice-red 2s infinite linear alternate-reverse;
-  mix-blend-mode: lighten;
+  mix-blend-mode: screen;
 }
 
 .glitch-text::after {
   color: #0ff; /* Cyan Channel */
   z-index: 2;
   animation: slice-cyan 2s infinite linear alternate-reverse;
-  mix-blend-mode: lighten;
+  mix-blend-mode: screen;
 }
 
 /* Base Theme Styles */

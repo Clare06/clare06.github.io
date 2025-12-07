@@ -7,6 +7,7 @@ class AudioController {
         };
 
         // Settings
+        this.sounds.transition.volume = 0.8;
         this.sounds.hover.volume = 0.2;
     }
 
@@ -29,25 +30,29 @@ let spideyAudioController = null;
 // Tech Stack Data
 const techStack = ['Java', 'Spring Boot', 'Angular', 'OptaPlanner', 'AWS', 'React', 'Node.js', 'Kafka', 'CI/CD'];
 
-// Global Function: Trigger Tech Glitch (0.0s - 2.8s)
-window.triggerTechGlitch = function() {
+// Sync Configuration
+const DROP_SYNC_MS = 2500;
+
+// Global Function: Trigger Tech Glitch
+// Accepts an onComplete callback to synchronize the actual content swap/drop
+window.triggerTechGlitch = function(onComplete) {
     console.log("Starting Tech Glitch...");
 
     // Initialize Audio Early if possible
     if (!spideyAudioController) spideyAudioController = new AudioController();
     spideyAudioController.play('transition');
 
-    const duration = 2800; // Run for 2.8s (stop just before swap)
     const intervalTime = 100;
 
     const intervalId = setInterval(() => {
         spawnTechSpan();
     }, intervalTime);
 
-    // Stop after duration
+    // Stop and Trigger Callback after DROP_SYNC_MS
     setTimeout(() => {
         clearInterval(intervalId);
-    }, duration);
+        if (onComplete) onComplete();
+    }, DROP_SYNC_MS);
 };
 
 function spawnTechSpan() {
@@ -93,13 +98,13 @@ function triggerDropSequence() {
     const impactWeb = document.getElementById('impact-web');
     const profile = document.getElementById('spidey-profile');
 
-    // Start Drop
+    // Start Drop (Immediately upon this function call, which is now synced)
     if(dropWrapper) {
         void dropWrapper.offsetWidth; // Force Reflow
         dropWrapper.classList.add('animate-drop');
     }
 
-    // Schedule Impact Event (800ms)
+    // Schedule Impact Event (800ms after drop starts)
     setTimeout(() => {
         triggerImpact(webLine, impactWeb, profile);
     }, 800);
