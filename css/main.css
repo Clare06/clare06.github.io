@@ -122,7 +122,7 @@ header {
 }
 
 .button:hover {
-  background-color: #d65b75;
+  background-color: rgb(213.8385826772, 91.1614173228, 116.9881889764);
   color: white;
   transform: translateY(-2px);
 }
@@ -213,7 +213,7 @@ header {
   color: #CB3353;
 }
 .menu .dropdown-content a:hover:last-child {
-  background-color: #a22942;
+  background-color: rgb(162.2401574803, 40.7598425197, 66.3346456693);
   color: white;
 }
 
@@ -258,11 +258,12 @@ header {
   align-items: center;
 }
 .prof-img img {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.1), -20px -20px 60px rgba(255, 255, 255, 0.5);
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
 }
 .prof-img img:hover {
@@ -283,27 +284,26 @@ header {
   line-height: 1.1;
 }
 .about-me h2:first-of-type {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   color: #666;
-  font-weight: 400;
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 .about-me h5 {
-  margin: 15px 0 5px 0;
+  margin: 8px 0;
   text-align: left;
-  font-size: 1.2rem;
-  color: #CB3353;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+  display: block;
 }
-.about-me h5::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 2px;
-  background-color: #CB3353;
+.about-me h5:nth-of-type(2) {
+  color: #CB3353;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 15px;
 }
 .about-me p {
   margin: 25px 0;
@@ -337,7 +337,7 @@ header {
 .about-me p strong i:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(203, 51, 83, 0.4);
-  background: #b72e4b;
+  background: rgb(182.6200787402, 45.8799212598, 74.6673228346);
 }
 
 .content-scroll-container {
@@ -557,7 +557,15 @@ html {
   color: #444;
 }
 .mobile-prof .about-me p strong i {
-  color: #CB3353;
+  display: inline-block;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  background: #CB3353;
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(203, 51, 83, 0.3);
   font-size: 1.1rem;
 }
 
@@ -640,11 +648,11 @@ html {
   color: #2ECC71;
 }
 .experience .exp-card.ace-card .role-company h3 a:hover {
-  color: #208e4e;
+  color: rgb(31.924, 141.576, 78.422);
 }
 .experience .exp-card.ace-card .exp-date {
   background: rgba(46, 204, 113, 0.1);
-  color: #25a25a;
+  color: rgb(36.616, 162.384, 89.948);
   border-color: rgba(46, 204, 113, 0.2);
 }
 .experience .exp-card.ace-card .exp-details ul li::before {
@@ -657,7 +665,7 @@ html {
   color: #007bff;
 }
 .experience .exp-card.gtn-card .role-company h3 a:hover {
-  color: #0056b3;
+  color: rgb(0, 86.1, 178.5);
 }
 .experience .exp-card.gtn-card .exp-date {
   background: rgba(0, 123, 255, 0.1);
@@ -725,7 +733,7 @@ html {
   transition: color 0.2s;
 }
 .experience .exp-card .exp-header .role-company h3 a:hover {
-  color: #8e243a;
+  color: rgb(141.8602362205, 35.6397637795, 58.0019685039);
   text-decoration: underline;
 }
 .experience .exp-card .exp-header .exp-date {
@@ -1286,7 +1294,7 @@ html {
     margin-bottom: 20px;
   }
   .about-me {
-    padding: 20px;
+    padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1301,6 +1309,12 @@ html {
     text-align: center;
     font-size: 1rem;
     line-height: 1.6;
+  }
+  .about-me p strong i {
+    margin-top: 20px;
+    color: white !important;
+    background-color: #CB3353;
+    display: inline-block;
   }
   .about-me h2 {
     text-align: center;

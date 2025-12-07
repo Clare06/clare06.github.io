@@ -104,20 +104,8 @@
           <div class="scroll">
             <div class="who-i-am">
               <h1>WHO AM I?</h1>
-              <p>
-                I am a passionate software engineer with expertise in technologies like Angular, Spring Boot, Ionic, and MySQL.
-                During my journey, I have gained extensive experience with React, Node.js, GraphQL, PostgreSQL, and AWS cloud services,
-                enhancing my ability to build scalable and robust applications.
-                <br /><br>
-                My journey into technology began with a love for gaming, sparking my interest in software engineering.
-                I believe in taking a "Leap of faith" when facing new challenges, embracing opportunities to learn and grow.
-                <br /><br>
-                As a software engineer, I enjoy exploring innovative solutions. My experience ranges from full-stack development
-                with Spring Boot, Angular, and Ionic to microservices, event-driven architecture, and cloud technologies like AWS and Azure.
-                I am committed to delivering high-quality work and continuously expanding my skill set.
-                <br /><br>
-                I am excited about the future of technology and look forward to contributing to impactful projects.
-                Let's connect and build something great together!
+              <p id="bio-text">
+                <!-- Content loaded via JSON -->
               </p>
             </div>
 
@@ -164,12 +152,18 @@
                     <!-- Toggle for Presentations -->
                     <div class="presentation-toggle-container">
                         <a href="javascript:void(0)" class="presentation-toggle" onclick="togglePresentations(this)">
-                            View Internal Tech Talks <i class="fas fa-chevron-down"></i>
+                            Key Presentations <i class="fas fa-chevron-down"></i>
                         </a>
                         <div class="presentation-list" style="display: none;">
                             <ul>
-                                <li>API Performance Optimization</li>
-                                <li>Database Sharding Strategies</li>
+                                <li>
+                                    <strong>5 Key Ways to Boost API Performance</strong><br>
+                                    <em>Details:</em> Covered Pagination, Asynchronous Communication, Caching, Connection Pooling, and Load Balancing.
+                                </li>
+                                <li>
+                                    <strong>Database Solutions for Large-Scale Applications</strong><br>
+                                    <em>Details:</em> Explained database sharding and its impact on system efficiency for large user bases.
+                                </li>
                             </ul>
                         </div>
                     </div>

@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Load Content from JSON
+  fetch('data/content.json')
+    .then(response => response.json())
+    .then(data => {
+        const bioText = document.getElementById('bio-text');
+        if (bioText) {
+            bioText.innerText = data.bio;
+        }
+    })
+    .catch(error => console.error('Error loading content:', error));
+
   const bubbleContainer = document.getElementById("bubbleContainer");
   const containerWidth = bubbleContainer.offsetWidth;
   const containerHeight = bubbleContainer.offsetHeight;
