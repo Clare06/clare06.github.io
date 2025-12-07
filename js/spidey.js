@@ -27,8 +27,8 @@ class AudioController {
 // Global state to hold controller
 let spideyAudioController = null;
 
-// Tech Stack Data
-const techStack = ['Java', 'Spring Boot', 'Angular', 'OptaPlanner', 'AWS', 'React', 'Node.js', 'Kafka', 'CI/CD'];
+// Tech Stack Data (Updated for "Tech Pop" overlay)
+const techWords = ['JAVA', 'SPRING', '404', 'AWS', 'NULL', 'SYSTEM'];
 
 // Sync Configuration
 const DROP_SYNC_MS = 2500;
@@ -36,47 +36,62 @@ const DROP_SYNC_MS = 2500;
 // Global Function: Trigger Tech Glitch
 // Accepts an onComplete callback to synchronize the actual content swap/drop
 window.triggerTechGlitch = function(onComplete) {
-    console.log("Starting Tech Glitch...");
+    console.log("Starting Tech Glitch with Overlay...");
 
     // Initialize Audio Early if possible
     if (!spideyAudioController) spideyAudioController = new AudioController();
     spideyAudioController.play('transition');
 
+    // Create Tech Overlay if it doesn't exist
+    let techOverlay = document.getElementById('tech-overlay');
+    if (!techOverlay) {
+        const transitionOverlay = document.getElementById('transition-overlay');
+        if (transitionOverlay) {
+            techOverlay = document.createElement('div');
+            techOverlay.id = 'tech-overlay';
+            transitionOverlay.appendChild(techOverlay);
+        }
+    }
+
     const intervalTime = 100;
 
     const intervalId = setInterval(() => {
-        spawnTechSpan();
+        spawnTechWord(techOverlay);
     }, intervalTime);
 
     // Stop and Trigger Callback after DROP_SYNC_MS
     setTimeout(() => {
         clearInterval(intervalId);
+        // Clean up overlay content or remove it?
+        // User didn't specify cleanup, but removing it keeps DOM clean after swap.
+        // Since content swap happens immediately after, the whole #transition-overlay (parent)
+        // will be hidden anyway, but let's be safe.
+        if (techOverlay) techOverlay.innerHTML = '';
+
         if (onComplete) onComplete();
     }, DROP_SYNC_MS);
 };
 
-function spawnTechSpan() {
-    const word = techStack[Math.floor(Math.random() * techStack.length)];
+function spawnTechWord(container) {
+    if (!container) return;
+
+    const word = techWords[Math.floor(Math.random() * techWords.length)];
     const span = document.createElement('span');
     span.innerText = word;
-    span.classList.add('tech-bleed-span');
+    span.classList.add('tech-word-pop');
 
-    // Random Position
-    const x = Math.random() * 90; // 0-90vw
-    const y = Math.random() * 90; // 0-90vh
-    span.style.left = `${x}vw`;
-    span.style.top = `${y}vh`;
+    // Random Position (0-90% to avoid edge clipping)
+    const x = Math.random() * 90;
+    const y = Math.random() * 90;
+    span.style.left = `${x}%`;
+    span.style.top = `${y}%`;
 
-    // Random Scale
-    const scale = 0.8 + Math.random() * 0.7; // 0.8 - 1.5
-    span.style.transform = `scale(${scale})`;
+    container.appendChild(span);
 
-    document.body.appendChild(span);
-
-    // Remove after 150ms
+    // Remove after 200ms
     setTimeout(() => {
         span.remove();
-    }, 150);
+    }, 200);
 }
 
 // Global Function: Initialize Theme Logic (Called AFTER content swap)
