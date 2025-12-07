@@ -357,7 +357,15 @@ html {
             color: #444;
 
             strong i {
-                color: $button-color;
+                display: inline-block;
+                margin-top: 15px;
+                font-style: normal;
+                font-weight: 700;
+                color: white; // Ensure visible text color against button background
+                background: $button-color; // Make sure button has background
+                padding: 10px 25px;
+                border-radius: 30px;
+                box-shadow: 0 4px 15px rgba(203, 51, 83, 0.3);
                 font-size: 1.1rem;
             }
         }

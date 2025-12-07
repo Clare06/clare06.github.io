@@ -557,7 +557,15 @@ html {
   color: #444;
 }
 .mobile-prof .about-me p strong i {
-  color: #CB3353;
+  display: inline-block;
+  margin-top: 15px;
+  font-style: normal;
+  font-weight: 700;
+  color: white;
+  background: #CB3353;
+  padding: 10px 25px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(203, 51, 83, 0.3);
   font-size: 1.1rem;
 }
 
