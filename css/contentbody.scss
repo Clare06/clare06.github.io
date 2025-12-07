@@ -67,29 +67,29 @@
         line-height: 1.1;
 
         &:first-of-type {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: #666;
-            font-weight: 400;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 5px;
         }
     }
 
     h5 {
-        margin: 15px 0 5px 0;
+        margin: 8px 0;
         text-align: left;
-        font-size: 1.2rem;
-        color: $button-color;
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 500;
+        display: block;
 
-        &::before {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 2px;
-            background-color: $button-color;
+        // Special styling for the Job Title to make it pop
+        &:nth-of-type(2) {
+             color: $button-color;
+             font-weight: 700;
+             font-size: 1.3rem;
+             margin-top: 15px;
         }
     }
 
