@@ -38,23 +38,34 @@
 
     <!-- Animated Profile Drop -->
     <div class="profile-container">
-        <div class="spidey-drop-wrapper">
-            <!-- The "Web Holder" that the picture is stuck in -->
-            <svg class="profile-web-holder" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="48" stroke="white" stroke-width="1" fill="rgba(0,0,0,0.5)" />
-                <line x1="50" y1="50" x2="50" y2="0" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="85" y2="15" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="95" y2="50" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="85" y2="85" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="50" y2="95" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="15" y2="85" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="5" y2="50" stroke="white" stroke-width="0.5" />
-                <line x1="50" y1="50" x2="15" y2="15" stroke="white" stroke-width="0.5" />
-                <!-- Spirals -->
-                <path d="M 50 10 Q 70 10 90 50 Q 70 90 50 90 Q 30 90 10 50 Q 30 10 50 10" fill="none" stroke="white" stroke-width="0.5" opacity="0.6"/>
-                <path d="M 50 25 Q 60 25 75 50 Q 60 75 50 75 Q 40 75 25 50 Q 40 25 50 25" fill="none" stroke="white" stroke-width="0.5" opacity="0.6"/>
-            </svg>
-            <img src="images/Nisho23.png" alt="Profile" class="profile-pic">
+
+        <!-- The Impact Web (Appears at 800ms) -->
+        <div class="impact-web-container" id="impact-web">
+             <!-- Clean Geometric Web SVG -->
+             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="geometric-web">
+                 <g stroke="white" stroke-width="2" fill="none" opacity="0.8">
+                    <!-- Radial Lines -->
+                    <line x1="100" y1="100" x2="100" y2="0" />
+                    <line x1="100" y1="100" x2="170" y2="30" />
+                    <line x1="100" y1="100" x2="200" y2="100" />
+                    <line x1="100" y1="100" x2="170" y2="170" />
+                    <line x1="100" y1="100" x2="100" y2="200" />
+                    <line x1="100" y1="100" x2="30" y2="170" />
+                    <line x1="100" y1="100" x2="0" y2="100" />
+                    <line x1="100" y1="100" x2="30" y2="30" />
+
+                    <!-- Concentric Hexagons/Circles -->
+                    <polygon points="100,20 160,50 180,100 160,150 100,180 40,150 20,100 40,50" />
+                    <polygon points="100,40 145,62 160,100 145,138 100,160 55,138 40,100 55,62" />
+                    <polygon points="100,60 130,75 140,100 130,125 100,140 70,125 60,100 70,75" />
+                    <polygon points="100,80 115,87 120,100 115,113 100,120 85,113 80,100 85,87" />
+                 </g>
+             </svg>
+        </div>
+
+        <div class="spidey-drop-wrapper" id="drop-wrapper">
+            <div class="web-line" id="web-line"></div>
+            <img src="images/Nisho23.png" alt="Profile" class="profile-pic" id="spidey-profile">
         </div>
     </div>
 
@@ -112,7 +123,7 @@
     </div>
 
     <div class="spidey-grid">
-        <div class="spidey-card">
+        <div class="spidey-card project-card">
             <h3>Parking Slot Allocation Service</h3>
             <p>Optimized parking using coordinate rule engines.</p>
             <div class="tech-badges">
@@ -120,7 +131,7 @@
                 <span class="tech-badge">Spring Boot</span>
             </div>
         </div>
-        <div class="spidey-card">
+        <div class="spidey-card project-card">
             <h3>End-to-End Encrypted Chat</h3>
             <p>Secure messaging platform ensuring privacy.</p>
             <div class="tech-badges">
@@ -128,7 +139,7 @@
                 <span class="tech-badge">Spring Boot</span>
             </div>
         </div>
-        <div class="spidey-card">
+        <div class="spidey-card project-card">
             <h3>Supermarket Microservices</h3>
             <p>Scalable architecture for inventory & orders.</p>
             <div class="tech-badges">
@@ -136,7 +147,7 @@
                 <span class="tech-badge">Kafka</span>
             </div>
         </div>
-        <div class="spidey-card">
+        <div class="spidey-card project-card">
             <h3>Route Optimization System</h3>
             <p>Delivery route efficiency and logistics.</p>
             <div class="tech-badges">
@@ -145,7 +156,7 @@
                 <span class="tech-badge">OptaPlanner</span>
             </div>
         </div>
-        <div class="spidey-card">
+        <div class="spidey-card project-card">
             <h3>Travel Recommendation System</h3>
             <p>Personalized travel suggestions using NLP.</p>
             <div class="tech-badges">

@@ -37,17 +37,23 @@
    100% { text-shadow: 2px 0 var(--spidey-red), -2px 0 var(--spidey-blue); }
 }
 
-@keyframes spider-drop {
-    0% { transform: translateY(-150vh); }
-    60% { transform: translateY(30px); } /* Jojo Overshoot */
-    75% { transform: translateY(-10px); }
-    90% { transform: translateY(5px); }
-    100% { transform: translateY(0); }
+/*
+   Spider Drop Animation Sequence
+   Total Time: 1.2s
+   0-800ms: Drop to 0
+   800-1200ms: Overshoot (+20px) then settle (0)
+*/
+@keyframes spider-drop-kinetic {
+    0% { transform: translateY(-100vh); }
+    66% { transform: translateY(0); } /* ~800ms point (0.8/1.2 = 0.66) */
+    80% { transform: translateY(20px); } /* Overshoot down */
+    100% { transform: translateY(0); } /* Settle */
 }
 
-@keyframes web-holder-spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+@keyframes web-pop {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0.5; }
+    60% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.0); opacity: 1; }
 }
 
 @keyframes skill-pop {
@@ -172,6 +178,13 @@ body.spidey-mode .theme-container {
     opacity: 0.1;
 }
 
+@media (max-width: 768px) {
+    .spider-web-bg {
+        max-width: 90vw; /* Prevent overflow */
+        height: auto;
+    }
+}
+
 .spider-web-bg .web-strand {
     stroke: var(--spidey-red);
     stroke-width: 0.5;
@@ -256,7 +269,7 @@ body.spidey-mode .theme-container {
   font-weight: bold;
 }
 
-/* Profile Picture & Animation */
+/* Profile Container Area */
 .profile-container {
     display: flex;
     justify-content: center;
@@ -267,39 +280,53 @@ body.spidey-mode .theme-container {
     min-height: 250px;
 }
 
-.spidey-drop-wrapper {
-    position: relative;
-    display: inline-block;
-    transform: translateY(-150vh);
-    animation: spider-drop 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: 0.5s;
+/* The Impact Web Container */
+.impact-web-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0; /* Hidden initially */
+    pointer-events: none;
 }
 
-/* The Web Line - Permanently Visible */
-.spidey-drop-wrapper::before {
-    content: '';
+.impact-web-container.pop-in {
+    animation: web-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.geometric-web {
+    width: 100%;
+    height: 100%;
+}
+
+/* The Wrapper for Drop Animation */
+.spidey-drop-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-100vh); /* Start offscreen */
+}
+
+.spidey-drop-wrapper.animate-drop {
+    animation: spider-drop-kinetic 1.2s cubic-bezier(0.5, 0, 0.75, 0) forwards;
+}
+
+/* The Web Line */
+.web-line {
     position: absolute;
     bottom: 50%;
     left: 50%;
     width: 2px;
-    height: 300vh; /* Long enough to reach top */
+    height: 150vh; /* Long enough */
     background: #fff;
     transform: translateX(-50%);
     z-index: -1;
-    box-shadow: 0 0 8px var(--spidey-cyan); /* Glow to make it stand out */
-}
-
-/* The Web Holder (Behind Profile) */
-.profile-web-holder {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 350px; /* Larger than profile pic */
-    height: 350px;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-    animation: web-holder-spin 60s linear infinite;
-    pointer-events: none;
+    box-shadow: 0 0 5px var(--spidey-cyan);
+    transition: opacity 0.1s step-end;
 }
 
 .profile-pic {
@@ -314,22 +341,10 @@ body.spidey-mode .theme-container {
 }
 
 @media (max-width: 768px) {
-    @keyframes spider-drop-mobile {
-        0% { transform: translateY(-120vh); }
-        60% { transform: translateY(20px); }
-        75% { transform: translateY(-5px); }
-        90% { transform: translateY(2px); }
-        100% { transform: translateY(0); }
-    }
+    .profile-pic { width: 150px; height: 150px; }
+    .impact-web-container { width: 250px; height: 250px; }
 
-    .spidey-drop-wrapper {
-        animation-name: spider-drop-mobile;
-    }
-
-    .profile-web-holder {
-        width: 300px;
-        height: 300px;
-    }
+    .spidey-header h1 { font-size: 2.5rem; }
 }
 
 /* Comic Bubble */
@@ -512,12 +527,14 @@ body.spidey-mode .theme-container {
 
 /* Footer */
 .spidey-footer {
+    position: relative;
     text-align: center;
     padding: 40px;
     margin-top: 50px;
     background-color: #000;
     color: var(--spidey-blue);
     border-top: 4px solid var(--spidey-red);
+    z-index: 10;
 }
 
 .spidey-social a {

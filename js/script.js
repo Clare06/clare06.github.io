@@ -192,6 +192,12 @@ function toggleSpideyTheme() {
                 document.body.classList.add('spidey-mode');
                 spideyToggle.querySelector('i').className = "fas fa-user-tie"; // Change icon to tie
                 isSpideyMode = true;
+
+                // Dynamically load Spidey Logic
+                const script = document.createElement('script');
+                script.src = 'js/spidey.js';
+                script.id = 'spidey-script';
+                document.body.appendChild(script);
             })
             .catch(error => {
                 console.error('Error loading Spidey content:', error);
