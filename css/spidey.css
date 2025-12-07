@@ -1,13 +1,10 @@
-/* Spidey Theme CSS - Level Up */
+/* Spidey Theme CSS - Miles Morales Edition */
 :root {
-  --spidey-bg: #0a0a0a;
-  --spidey-text: #eeeeee;
-  --spidey-cyan: #00FFFF;
-  --spidey-magenta: #FF0055;
-  --spidey-green: #CCFF00;
-  --spidey-red: #E23636;
-  --spidey-blue: #013C86;
-  --spidey-card-bg: rgba(20, 20, 20, 0.95);
+  --spidey-bg: #111111; /* Deep Matte Black/Grey */
+  --spidey-text: #f0f0f0; /* Clean White/Light Grey */
+  --spidey-cyan: #00F0FF; /* Neon Cyan */
+  --spidey-red: #FF0055; /* Spidey Red/Magenta */
+  --spidey-card-bg: #1a1a1a;
   --spidey-font-main: 'Courier New', Courier, monospace;
   --spidey-font-display: 'Impact', fantasy, sans-serif;
 }
@@ -22,12 +19,21 @@
   100% { transform: skew(0deg); }
 }
 
-@keyframes glitch-text {
-  0% { text-shadow: 2px 2px var(--spidey-magenta), -2px -2px var(--spidey-cyan); }
-  25% { text-shadow: -2px 2px var(--spidey-magenta), 2px -2px var(--spidey-cyan); }
-  50% { text-shadow: 2px -2px var(--spidey-magenta), -2px 2px var(--spidey-cyan); }
-  75% { text-shadow: -2px -2px var(--spidey-magenta), 2px 2px var(--spidey-cyan); }
-  100% { text-shadow: 2px 2px var(--spidey-magenta), -2px -2px var(--spidey-cyan); }
+@keyframes glitch-anim {
+  0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px, 2px); }
+  20% { clip-path: inset(92% 0 1% 0); transform: translate(2px, -2px); }
+  40% { clip-path: inset(43% 0 1% 0); transform: translate(-2px, 2px); }
+  60% { clip-path: inset(25% 0 58% 0); transform: translate(2px, -2px); }
+  80% { clip-path: inset(54% 0 7% 0); transform: translate(-2px, 2px); }
+  100% { clip-path: inset(58% 0 43% 0); transform: translate(2px, -2px); }
+}
+
+@keyframes text-split {
+   0% { text-shadow: 2px 0 var(--spidey-red), -2px 0 var(--spidey-cyan); }
+   25% { text-shadow: -2px 0 var(--spidey-red), 2px 0 var(--spidey-cyan); }
+   50% { text-shadow: 2px 0 var(--spidey-red), -2px 0 var(--spidey-cyan); }
+   75% { text-shadow: -2px 0 var(--spidey-red), 2px 0 var(--spidey-cyan); }
+   100% { text-shadow: 2px 0 var(--spidey-red), -2px 0 var(--spidey-cyan); }
 }
 
 /* Toggle Button */
@@ -54,7 +60,7 @@
 .spidey-toggle-btn:hover {
   color: var(--spidey-red);
   animation: glitch-skew 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
-  text-shadow: -2px 0 var(--spidey-cyan), 2px 0 var(--spidey-magenta);
+  text-shadow: -2px 0 var(--spidey-cyan), 2px 0 var(--spidey-red);
 }
 
 /* Transition Overlay */
@@ -81,21 +87,42 @@
 }
 
 .glitch-text {
-  font-family: var(--spidey-font-main);
-  font-size: 2rem;
+  font-family: var(--spidey-font-display);
+  font-size: 2.5rem;
   font-weight: bold;
   color: #fff;
   text-align: center;
   position: relative;
+  animation: text-split 0.1s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--spidey-red);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -1px 0 var(--spidey-cyan);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
 }
 
 /* Base Theme Styles */
 body.spidey-mode {
   background-color: var(--spidey-bg);
-  background-image:
-    radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(circle at 90% 80%, rgba(255, 0, 85, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
+  /* Clean background, no crazy gradients */
   color: var(--spidey-text);
   font-family: var(--spidey-font-main);
   overflow-x: hidden;
@@ -106,6 +133,58 @@ body.spidey-mode .theme-container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    z-index: 10;
+}
+
+/* Fixed Web Decoration - Top Right */
+.spider-web-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    z-index: 5; /* Behind content but visible */
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.spider-web-bg .web-strand {
+    stroke: var(--spidey-red);
+    stroke-width: 0.5;
+    fill: none;
+}
+
+/* Desktop Navigation */
+.spidey-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+}
+
+.spidey-nav-btn {
+    background: transparent;
+    border: 2px solid var(--spidey-red);
+    color: var(--spidey-red);
+    padding: 10px 25px;
+    font-family: var(--spidey-font-display);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 0 var(--spidey-cyan);
+    letter-spacing: 1px;
+}
+
+.spidey-nav-btn:hover {
+    background: var(--spidey-red);
+    color: #fff;
+    box-shadow: 2px 2px 0 var(--spidey-cyan);
+    transform: translate(2px, 2px);
+}
+
+@media (max-width: 768px) {
+    .spidey-nav { display: none; }
 }
 
 /* Headers */
@@ -124,7 +203,7 @@ body.spidey-mode .theme-container {
   letter-spacing: 2px;
   transform: rotate(-2deg);
   display: inline-block;
-  background: var(--spidey-magenta);
+  background: var(--spidey-red);
   padding: 10px 20px;
   border: 3px solid #fff;
   box-shadow: 10px 10px 0px var(--spidey-cyan);
@@ -149,10 +228,10 @@ body.spidey-mode .theme-container {
   color: var(--spidey-cyan);
   font-size: 1.5rem;
   margin-top: 20px;
-  text-shadow: 2px 2px 0px #000;
+  text-shadow: 1px 1px 0px #000;
 }
 
-/* Sticky Web Profile */
+/* Profile Picture */
 .profile-container {
     display: flex;
     justify-content: center;
@@ -161,26 +240,12 @@ body.spidey-mode .theme-container {
     position: relative;
 }
 
-.spider-web-bg {
-    position: absolute;
-    width: 400px;
-    height: 400px;
-    z-index: 0;
-    opacity: 0.6;
-    animation: spin-slow 60s linear infinite;
-}
-
-@keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
 .profile-pic {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     border: 5px solid var(--spidey-cyan);
-    box-shadow: 0 0 20px var(--spidey-magenta);
+    box-shadow: 0 0 20px var(--spidey-red);
     position: relative;
     z-index: 1;
     object-fit: cover;
@@ -191,7 +256,7 @@ body.spidey-mode .theme-container {
   background: white;
   color: black;
   padding: 30px;
-  border-radius: 50%; /* Make it an oval */
+  border-radius: 50%;
   position: relative;
   max-width: 500px;
   margin: 20px auto;
@@ -199,7 +264,7 @@ body.spidey-mode .theme-container {
   text-align: center;
   font-weight: bold;
   font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
-  box-shadow: 5px 5px 0px var(--spidey-green);
+  box-shadow: 5px 5px 0px var(--spidey-cyan);
 }
 
 .comic-bubble::after {
@@ -217,10 +282,10 @@ body.spidey-mode .theme-container {
 /* Cards */
 .spidey-card {
   background: var(--spidey-card-bg);
-  border: 2px solid var(--spidey-cyan);
+  border: 1px solid var(--spidey-cyan);
   padding: 20px;
   margin-bottom: 30px;
-  box-shadow: 8px 8px 0px var(--spidey-magenta);
+  box-shadow: 6px 6px 0px var(--spidey-red);
   position: relative;
   transition: transform 0.3s;
   overflow: hidden;
@@ -228,8 +293,8 @@ body.spidey-mode .theme-container {
 
 .spidey-card:hover {
   transform: translate(-3px, -3px);
-  box-shadow: 12px 12px 0px var(--spidey-green);
-  border-color: var(--spidey-green);
+  box-shadow: 10px 10px 0px var(--spidey-cyan);
+  border-color: var(--spidey-cyan);
 }
 
 .spidey-card h3 {
@@ -244,6 +309,7 @@ body.spidey-mode .theme-container {
 .spidey-card p {
     margin-bottom: 10px;
     line-height: 1.4;
+    color: var(--spidey-text);
 }
 
 /* Tech Badges */
@@ -256,13 +322,13 @@ body.spidey-mode .theme-container {
 
 .tech-badge {
     background: #000;
-    color: var(--spidey-green);
-    border: 1px solid var(--spidey-green);
-    padding: 5px 10px;
+    color: var(--spidey-cyan);
+    border: 1px solid var(--spidey-cyan);
+    padding: 4px 8px;
     font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
-    box-shadow: 3px 3px 0px var(--spidey-magenta);
+    box-shadow: 2px 2px 0px var(--spidey-red);
 }
 
 /* Grids */
@@ -284,8 +350,8 @@ body.spidey-mode .theme-container {
     padding: 10px;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 3px 3px 0px var(--spidey-magenta);
-    display: none; /* Hidden on desktop by default, or specific media query */
+    box-shadow: 3px 3px 0px var(--spidey-red);
+    display: none;
 }
 
 @media (max-width: 768px) {
@@ -327,7 +393,7 @@ body.spidey-mode .theme-container {
 
 .spidey-menu-link:hover {
     color: var(--spidey-cyan);
-    text-shadow: 3px 3px 0px var(--spidey-magenta);
+    text-shadow: 3px 3px 0px var(--spidey-red);
 }
 
 .spidey-menu-btn {
@@ -351,18 +417,18 @@ body.spidey-mode .theme-container {
     margin-top: 50px;
     background-color: #000;
     color: var(--spidey-cyan);
-    border-top: 4px solid var(--spidey-magenta);
+    border-top: 4px solid var(--spidey-red);
 }
 
 .spidey-social a {
-    color: var(--spidey-magenta);
+    color: var(--spidey-red);
     font-size: 2rem;
     margin: 0 15px;
     transition: all 0.3s;
 }
 
 .spidey-social a:hover {
-    color: var(--spidey-green);
+    color: var(--spidey-cyan);
     transform: scale(1.2);
 }
 
@@ -372,7 +438,7 @@ body.spidey-mode .theme-container {
     font-family: var(--spidey-font-display);
     font-size: 2.5rem;
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--spidey-magenta);
+    border-bottom: 2px solid var(--spidey-red);
     display: inline-block;
     padding-right: 20px;
 }
