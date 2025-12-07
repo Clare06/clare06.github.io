@@ -76,7 +76,10 @@ function toggleMenu() {
 }
 
 // Ensure button click triggers it
-document.querySelector('.dropbtn').addEventListener('click', toggleMenu);
+const dropBtn = document.querySelector('.dropbtn');
+if(dropBtn) {
+    dropBtn.addEventListener('click', toggleMenu);
+}
 
 
 const button = document.querySelector(".button");
@@ -87,6 +90,22 @@ button.addEventListener("click", function () {
     button.classList.remove("clicked");
   }, { once: true });
 });
+
+// Presentation Toggle Function
+function togglePresentations(element) {
+    const list = element.nextElementSibling;
+    const icon = element.querySelector('i');
+
+    element.classList.toggle('active');
+
+    if (list.style.display === "none") {
+        list.style.display = "block";
+        list.style.animation = "fadeIn 0.3s ease";
+    } else {
+        list.style.display = "none";
+    }
+}
+
 
 // Popup Functions
 function openPopup() { document.getElementById('popup').style.display = 'block'; }
