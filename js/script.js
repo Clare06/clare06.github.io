@@ -157,25 +157,51 @@ function triggerSpideyTransition() {
         glitchText.innerText = "Deactivating Professional Protocol...";
         glitchText.setAttribute('data-text', "Deactivating Professional Protocol...");
 
+        // Start Pre-Load Strategy for Spidey Mode
+        loadAndTriggerSpideyEffect();
+
         // Wait then change text to "Initiating Leap of Faith"
         setTimeout(() => {
             glitchText.innerText = "Initiating Leap of Faith...";
             glitchText.setAttribute('data-text', "Initiating Leap of Faith...");
-        }, 1000);
+        }, 1500);
     } else {
         glitchText.innerText = "Rebooting Professional Systems...";
         glitchText.setAttribute('data-text', "Rebooting Professional Systems...");
-    }
 
-    // After animation delay, swap content
-    setTimeout(() => {
-        toggleSpideyTheme();
-
-        // Hide Overlay
+        // Simple delay for switching back
         setTimeout(() => {
-            transitionOverlay.classList.remove('active');
-        }, 500);
-    }, 2000);
+            toggleSpideyTheme();
+             setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+        }, 2000);
+    }
+}
+
+function loadAndTriggerSpideyEffect() {
+    const existingScript = document.getElementById('spidey-script');
+
+    // Callback to run when script is ready
+    const onScriptReady = () => {
+        if (window.triggerTechGlitch) {
+            window.triggerTechGlitch();
+        }
+
+        // Wait 3.0s total for transition
+        setTimeout(() => {
+            toggleSpideyTheme();
+            setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+        }, 3000);
+    };
+
+    if (existingScript) {
+        onScriptReady();
+    } else {
+        const script = document.createElement('script');
+        script.src = 'js/spidey.js';
+        script.id = 'spidey-script';
+        script.onload = onScriptReady;
+        document.body.appendChild(script);
+    }
 }
 
 function toggleSpideyTheme() {
@@ -193,11 +219,10 @@ function toggleSpideyTheme() {
                 spideyToggle.querySelector('i').className = "fas fa-user-tie"; // Change icon to tie
                 isSpideyMode = true;
 
-                // Dynamically load Spidey Logic
-                const script = document.createElement('script');
-                script.src = 'js/spidey.js';
-                script.id = 'spidey-script';
-                document.body.appendChild(script);
+                // Initialize Animation Logic (Script is already loaded)
+                if (window.initSpideyTheme) {
+                    window.initSpideyTheme();
+                }
             })
             .catch(error => {
                 console.error('Error loading Spidey content:', error);
