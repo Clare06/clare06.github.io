@@ -136,35 +136,119 @@ function closePopup_travel() { document.getElementById('popup_travel').style.dis
 function openPopup_test() { document.getElementById('popup_test').style.display = 'block'; }
 function closePopup_test() { document.getElementById('popup_test').style.display = 'none'; }
 
-// Legacy Toggle (if still used)
-let isOldContent = true;
-let oldContent = null;
-const toggleButton = document.getElementById('toggleButton');
-const container = document.getElementById('default-theme-container');
-const spiderWebButton = document.querySelector('.spider-web-button');
+// Spidey Theme Toggle Logic
+const spideyToggle = document.getElementById('spidey-toggle');
+const transitionOverlay = document.getElementById('transition-overlay');
+const glitchText = transitionOverlay.querySelector('.glitch-text');
+const mainContainer = document.getElementById('default-theme-container');
+let isSpideyMode = false;
+let professionalContent = null;
 
-if(toggleButton) {
-  toggleButton.addEventListener('click', () => {
-      container.classList.add('hidden');
-      setTimeout(() => {
-          if (isOldContent) {
-              oldContent = container.innerHTML;
-              fetch('spidey-index-body.html')
-                  .then(response => response.text())
-                  .then(data => {
-                      container.innerHTML = data;
-                      spiderWebButton.style.backgroundImage = 'url("/images/back.png")';
-                      spiderWebButton.style.backgroundColor = '#F6E0E9';
-                      isOldContent = false;
-                      container.classList.remove('hidden');
-                  })
-                  .catch(error => console.error('Error loading content:', error));
-          } else {
-              container.innerHTML = oldContent;
-              spiderWebButton.style.backgroundImage = 'url("/images/1337090.jpeg")';
-              isOldContent = true;
-              container.classList.remove('hidden');
-          }
-      }, 250);
-  });
+if (spideyToggle) {
+    spideyToggle.addEventListener('click', triggerSpideyTransition);
+}
+
+function triggerSpideyTransition() {
+    // Show Overlay
+    transitionOverlay.classList.add('active');
+
+    // Determine text based on current state (before toggle)
+    if (!isSpideyMode) {
+        glitchText.innerText = "Deactivating Professional Protocol...";
+        glitchText.setAttribute('data-text', "Deactivating Professional Protocol...");
+
+        // Start Pre-Load Strategy for Spidey Mode
+        loadAndTriggerSpideyEffect();
+
+        // Wait then change text to "Initiating Leap of Faith"
+        setTimeout(() => {
+            glitchText.innerText = "Initiating Leap of Faith...";
+            glitchText.setAttribute('data-text', "Initiating Leap of Faith...");
+        }, 1500);
+    } else {
+        glitchText.innerText = "Rebooting Professional Systems...";
+        glitchText.setAttribute('data-text', "Rebooting Professional Systems...");
+
+        // Simple delay for switching back
+        setTimeout(() => {
+            toggleSpideyTheme();
+             setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+        }, 2000);
+    }
+}
+
+function loadAndTriggerSpideyEffect() {
+    const existingScript = document.getElementById('spidey-script');
+
+    // Callback to run when script is ready
+    const onScriptReady = () => {
+        if (window.triggerTechGlitch) {
+            window.triggerTechGlitch();
+        }
+
+        // Wait 3.0s total for transition
+        setTimeout(() => {
+            toggleSpideyTheme();
+            setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+        }, 3000);
+    };
+
+    if (existingScript) {
+        onScriptReady();
+    } else {
+        const script = document.createElement('script');
+        script.src = 'js/spidey.js';
+        script.id = 'spidey-script';
+        script.onload = onScriptReady;
+        document.body.appendChild(script);
+    }
+}
+
+function toggleSpideyTheme() {
+    if (!isSpideyMode) {
+        // Switch TO Spidey Mode
+        if (!professionalContent) {
+            professionalContent = mainContainer.innerHTML;
+        }
+
+        fetch('spidey-index-body.html')
+            .then(response => response.text())
+            .then(data => {
+                mainContainer.innerHTML = data;
+                document.body.classList.add('spidey-mode');
+                spideyToggle.querySelector('i').className = "fas fa-user-tie"; // Change icon to tie
+                isSpideyMode = true;
+
+                // Initialize Animation Logic (Script is already loaded)
+                if (window.initSpideyTheme) {
+                    window.initSpideyTheme();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading Spidey content:', error);
+                // Fallback if fetch fails
+                transitionOverlay.classList.remove('active');
+            });
+
+    } else {
+        // Switch BACK to Professional Mode
+        if (professionalContent) {
+            mainContainer.innerHTML = professionalContent;
+            document.body.classList.remove('spidey-mode');
+            spideyToggle.querySelector('i').className = "fas fa-spider"; // Change icon back to spider
+            isSpideyMode = false;
+
+            // Re-initialize scripts if needed (e.g. bubbles)
+            // Ideally, we should modularize the init code, but for now a simple reload might be safer or just basic restoration
+             window.location.reload(); // Reloading is cleaner to restore all listeners
+        }
+    }
+}
+
+// Spidey Mobile Menu Logic
+function toggleSpideyMenu() {
+    const menu = document.getElementById('spidey-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    }
 }
