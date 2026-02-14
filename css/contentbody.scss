@@ -1,78 +1,134 @@
 .content-body{
-position: absolute;
-overflow: auto;
-z-index: 100;
-top: 15vh;
-width: 100%;
-max-width: 100%;
-min-height: 85vh;
-background: rgb(251,210,154);
-background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba(236,197,216,0.5270483193277311) 100%);
-// background: rgb(251,210,154);
-// background: linear-gradient(90deg, rgba(251,210,154,0.39539565826330536) 0%, rgba(236,197,216,0.44861694677871145) 100%);
+    position: relative; // Changed from absolute
+    width: 100%;
+    margin-top: 0; // Removed margin to allow background to go to top
+    padding-top: 80px; // Match navbar height
+    min-height: 100vh;
+    background: linear-gradient(90deg, rgba(251,210,154,0.62) 0%, rgba(236,197,216,0.53) 100%);
+    overflow-x: hidden;
 }
+
 .content-body-container{
     position: relative;
-    min-width: 70vw;
-    max-width: 70vw;
-    min-height: 75vh;
-    max-width: 75vh;
-    margin-top: 5vh;
-    left: 15vw;
-    z-index: 100;
-    border-radius: 5px;
-   
-    // background: rgb(191,160,175);
-    // background: linear-gradient(90deg, rgba(191,160,175,0.5242471988795518) 0%, rgba(205,188,197,0.45702030812324934) 100%);
-    // background: rgb(191,160,175);
-    // background: linear-gradient(90deg, rgba(191,160,175,0.6474964985994398) 0%, rgba(205,188,197,0.6110819327731092) 100%);
-    // background: rgb(191,160,175);
-    // background: linear-gradient(90deg, rgba(191,160,175,0.7791491596638656) 0%, rgba(191,160,175,0.8547794117647058) 100%);
-    background: rgb(191,160,175);
-    background: linear-gradient(90deg, rgba(191,160,175,0.9360119047619048) 0%, rgba(191,160,175,0.9332107843137255) 100%);
-    -webkit-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-    -moz-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-    box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
+    width: 80%;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    z-index: 10;
+    border-radius: 20px;
+
+    // Modern Glassmorphism Look
+    background: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+
+    @media screen and (max-width: 768px) {
+        display: none; // HIDE ON MOBILE, use .mobile-prof instead
+    }
 }
 .prof-img{
-    padding: 15px;
-    min-width: 30vw;
-    // max-width: 30vw;
+    flex: 1;
     display: flex;
-    justify-content:center;
-    align-items:center;
-    overflow: hidden;
-}
-.prof-img img{
-    width: 90%; /* Make the image width fill the container */
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+
+    img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: scale(1.02);
+        }
+    }
 }
 .about-me{
-    min-width: 40vw;
-    padding-top: 5vh;
+    flex: 1.2;
     font-family: $font-family;
-    color: $font-about-color;
+    color: #333;
     
-}
-.about-me h2{
-    margin: 2px 5vw;
-    text-align: left;
-}
-.about-me p{
-    margin: 5px 5vw;
-    text-align: justify;
-    font-size:large;
-}
-.about-me h3{
-    margin: 2px;
-}
-.about-me h5{
-    margin: 10px 5vw;
-    text-align: left;
+    h2 {
+        margin: 5px 0;
+        text-align: left;
+        font-size: 3rem;
+        font-weight: 800;
+        color: #2c3e50;
+        line-height: 1.1;
+
+        &:first-of-type {
+            font-size: 1.1rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+    }
+
+    h5 {
+        margin: 8px 0;
+        text-align: left;
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 500;
+        display: block;
+
+        // Special styling for the Job Title to make it pop
+        &:nth-of-type(2) {
+             color: $button-color;
+             font-weight: 700;
+             font-size: 1.3rem;
+             margin-top: 15px;
+        }
+    }
+
+    p {
+        margin: 25px 0;
+        text-align: left;
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+
+        br { display: none; } // clean up breaks
+
+        b {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #222;
+        }
+
+        strong i {
+            display: inline-block;
+            margin-top: 15px;
+            font-style: normal;
+            font-weight: 700;
+            color: white;
+            background: $button-color;
+            padding: 10px 25px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(203, 51, 83, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(203, 51, 83, 0.4);
+                background: darken($button-color, 5%);
+            }
+        }
+    }
 }
 
 .content-scroll-container {
@@ -92,51 +148,9 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     font-family: $font-family;
     color: $font-about-color;    
 }
-.projects{
-    margin-top: 5vh;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    div {
-        width: 25%;
-        min-height: 300px;
-        max-height: 300px;
-        -webkit-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-        -moz-box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-        box-shadow: 9px 11px 18px -7px rgba(0,0,0,0.53);
-        border-radius: 5px;
-        background: rgb(191, 160, 175);
-        background: linear-gradient(90deg, rgba(191, 160, 175, 0.7) 0%, rgba(191, 160, 175, 0.7) 100%);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: relative;
-        // background-color: #cdb4b6;
-          
-    }
-    p {
-        font-family: $font-family;
-        // color: #0f0a19;
-        color: $font-about-color;
-    }   
 
-}
-.projects div div {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background:transparent !important;
-    max-height: 50px !important;
-    min-height: 50px !important;
-    width: 50px !important;
-    -webkit-box-shadow: 0 0 0 0!important;
-    -moz-box-shadow: 0 0 0 0!important;
-    box-shadow:0 0 0 0!important;
-    border-radius: 0!important;
-    
-}
+// REMOVED LEGACY PROJECTS STYLES
+// Handled by css/projects.scss now
 
 .achievement{
     margin-top: 5vh;
@@ -171,40 +185,7 @@ background: linear-gradient(90deg, rgba(251,210,154,0.6222864145658263) 0%, rgba
     margin-bottom: 20px;
 }
 
-.contact {
-    // Make sure to properly define and import variables
-    font-family: $font-family;
-    color: $font-contact-color;
-    display: flex;
-    flex-direction: column;
-    margin-top: 150px;
-    width: 100%;
-    background-color: black;
-    padding-top: 10px;
-    padding-bottom: 20px;
-
-    a {
-        text-decoration: none;
-        font-family: $font-family;
-        color: $font-contact-color;
-        transition: 0.2s;
-        padding: 5px;
-
-        :hover {
-            transform: scale(1.1);
-        }
-    }
-    a:visited {
-        color: rgb(210, 136, 235); /* Color for visited links */
-      }
-    div {
-        display: flex;
-        justify-content: space-around;
-        margin-top: 10px;
-    }
-    
-    
-}
+// .contact styles removed and moved to footer.scss
 
 html {
     scroll-behavior: smooth;
@@ -213,7 +194,48 @@ html {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+
+    h1 {
+        font-family: $font-family;
+        font-size: 2.2rem;
+        color: #333;
+        margin-bottom: 30px;
+        position: relative;
+        text-align: center;
+        letter-spacing: 1px;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: $button-color;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        font-family: $font-family;
+        color: #444;
+        font-size: 1.1rem;
+        line-height: 1.9;
+        text-align: justify;
+
+        @media screen and (max-width: 768px) {
+            text-align: left;
+            font-size: 1rem;
+        }
+    }
 }
 .grid{
     display: flex;
@@ -262,25 +284,90 @@ html {
         height: 300px;
 }
 .mobile-prof {
-    margin-top: 50px;
+    margin-top: 20px;
     display: flex;
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /* Centers children vertically */
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-  }
-  .circle-photo {
-    width: 200px; /* Adjust size as needed */
-    height: 200px; /* Adjust size as needed */
-    border-radius: 50%; /* Creates a circle */
-    background: rgb(191,160,175);
-    background: linear-gradient(90deg, rgba(191,160,175,0.9360119047619048) 0%, rgba(191,160,175,0.9332107843137255) 100%);
-    overflow: hidden;
-    border: 2px solid white;
-  }
-  .circle-photo img{
-    margin-top: 50px;
-    width: 80%; /* Make the image width fill the container */
-    height: auto;
-    border-radius: 5px;
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.4); // Subtle glass effect
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+    margin: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    @media screen and (min-width: 769px) {
+        display: none; // HIDE ON DESKTOP
+    }
+
+    .circle-photo {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: white;
+        overflow: hidden;
+        border: 4px solid white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px; // Adjust based on image crop
+        }
+    }
+
+    .about-me {
+        padding-top: 0;
+        min-width: auto;
+        width: 100%;
+
+        h2 {
+            margin: 5px 0;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #333;
+
+            &:first-of-type {
+                font-size: 1.2rem;
+                color: #666;
+                font-weight: normal;
+            }
+        }
+
+        h5 {
+            margin: 10px 0;
+            text-align: center;
+            font-size: 0.95rem;
+            color: $button-color;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+
+            strong i {
+                display: inline-block;
+                margin-top: 15px;
+                font-style: normal;
+                font-weight: 700;
+                color: white; // Ensure visible text color against button background
+                background: $button-color; // Make sure button has background
+                padding: 10px 25px;
+                border-radius: 30px;
+                box-shadow: 0 4px 15px rgba(203, 51, 83, 0.3);
+                font-size: 1.1rem;
+            }
+        }
+    }
 }
- 

@@ -1,5 +1,175 @@
-<div id="spidey-container">
-        <h1>HEY SPIDE</h1>
-        <h2>New theme on progress</h2>
-        <button id="toggleButton">Load New Content</button>
+<!-- SVG Web Background - Fixed Top Right -->
+<svg class="spider-web-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Radial lines -->
+    <line x1="100" y1="0" x2="0" y2="100" class="web-strand"/>
+    <line x1="100" y1="0" x2="20" y2="10" class="web-strand"/>
+    <line x1="100" y1="0" x2="10" y2="60" class="web-strand"/>
+    <line x1="100" y1="0" x2="60" y2="90" class="web-strand"/>
+    <line x1="100" y1="0" x2="90" y2="100" class="web-strand"/>
+    <!-- Concentric webs -->
+    <path d="M 80 10 Q 70 30 60 40 Q 50 80 40 90" class="web-strand" fill="none"/>
+    <path d="M 90 20 Q 80 50 70 60 Q 60 90 50 100" class="web-strand" fill="none"/>
+    <path d="M 70 5 Q 60 20 50 30 Q 40 60 30 70" class="web-strand" fill="none"/>
+</svg>
+
+<!-- Desktop Navigation -->
+<nav class="spidey-nav">
+    <a href="CV/Claretes Nishoban_SE.pdf" download class="spidey-nav-btn">Download CV</a>
+</nav>
+
+<!-- Hamburger Button (Mobile Only) -->
+<button class="spidey-hamburger" id="spidey-menu-btn" onclick="toggleSpideyMenu()">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Mobile Menu Overlay -->
+<div class="spidey-menu-overlay" id="spidey-menu">
+    <a href="#spidey-intro" class="spidey-menu-link" onclick="toggleSpideyMenu()">Home</a>
+    <a href="#spidey-skills" class="spidey-menu-link" onclick="toggleSpideyMenu()">Skills</a>
+    <a href="#spidey-projects" class="spidey-menu-link" onclick="toggleSpideyMenu()">Projects</a>
+    <a href="CV/Claretes Nishoban_SE.pdf" download class="spidey-menu-btn">Download CV</a>
+</div>
+
+<div class="theme-container" id="spidey-intro">
+    <div class="spidey-header">
+        <h1 data-text="Claretes Nishoban">Claretes Nishoban</h1>
+        <h2>Software Engineer / Multiverse Traveler</h2>
+    </div>
+
+    <!-- Animated Profile Drop -->
+    <div class="profile-container">
+
+        <!-- The Impact Web (Appears at 800ms) -->
+        <div class="impact-web-container" id="impact-web">
+             <!-- Clean Geometric Web SVG -->
+             <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="geometric-web">
+                 <g stroke="white" stroke-width="2" fill="none" opacity="0.8">
+                    <!-- Radial Lines -->
+                    <line x1="100" y1="100" x2="100" y2="0" />
+                    <line x1="100" y1="100" x2="170" y2="30" />
+                    <line x1="100" y1="100" x2="200" y2="100" />
+                    <line x1="100" y1="100" x2="170" y2="170" />
+                    <line x1="100" y1="100" x2="100" y2="200" />
+                    <line x1="100" y1="100" x2="30" y2="170" />
+                    <line x1="100" y1="100" x2="0" y2="100" />
+                    <line x1="100" y1="100" x2="30" y2="30" />
+
+                    <!-- Concentric Hexagons/Circles -->
+                    <polygon points="100,20 160,50 180,100 160,150 100,180 40,150 20,100 40,50" />
+                    <polygon points="100,40 145,62 160,100 145,138 100,160 55,138 40,100 55,62" />
+                    <polygon points="100,60 130,75 140,100 130,125 100,140 70,125 60,100 70,75" />
+                    <polygon points="100,80 115,87 120,100 115,113 100,120 85,113 80,100 85,87" />
+                 </g>
+             </svg>
+        </div>
+
+        <div class="spidey-drop-wrapper" id="drop-wrapper">
+            <div class="web-line" id="web-line"></div>
+            <img src="images/Nisho23.png" alt="Profile" class="profile-pic" id="spidey-profile">
+        </div>
+    </div>
+
+    <div class="comic-bubble">
+        "Alright, let's do this one last time. My name is Claretes Nishoban. I was bitten by a radioactive bug... for coding."
+    </div>
+
+    <!-- Power Stats (Education & Exp) -->
+    <div class="spidey-grid">
+        <div class="spidey-card">
+            <h3>Mission Log: Experience</h3>
+            <p><strong>Ace Green B.V.</strong> (Sep 2025 - Present)</p>
+            <p>Junior Fullstack Software Engineer. Building webs with Angular, Ionic, Spring Boot.</p>
+            <hr style="border-color: #333; border-style: dashed;">
+            <p><strong>GTN Technologies</strong> (Mar 2024 - Dec 2024)</p>
+            <p>Intern SE. Integrated LSEG APIs, Encryption, Micro-frontends.</p>
+        </div>
+
+        <div class="spidey-card">
+            <h3>Origin Story: Education</h3>
+            <p><strong>BSc (Hons) Information Technology</strong></p>
+            <p>University of Moratuwa (2021 - 2025)</p>
+            <p><em>Where I learned to control my powers.</em></p>
+            <br>
+            <p><strong>High School (A/L & O/L)</strong></p>
+            <p>St. Xavier's Boys' National School</p>
+        </div>
+    </div>
+
+    <div id="spidey-skills" style="margin-top: 50px;">
+        <h2 class="section-title">Superpowers (Skills)</h2>
+        <div class="spidey-card">
+            <div class="tech-badges">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Ionic</span>
+                <span class="tech-badge">React</span>
+                <span class="tech-badge">Node.js</span>
+                <span class="tech-badge">OptaPlanner</span>
+                <span class="tech-badge">GraphQL</span>
+                <span class="tech-badge">Kafka</span>
+                <span class="tech-badge">AWS</span>
+                <span class="tech-badge">Docker</span>
+                <span class="tech-badge">Microservices</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">PostgreSQL</span>
+                <span class="tech-badge">Serenity BDD</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="spidey-projects" style="margin-top: 50px;">
+        <h2 class="section-title">Web Slinging Action (Projects)</h2>
+    </div>
+
+    <div class="spidey-grid">
+        <div class="spidey-card project-card">
+            <h3>Parking Slot Allocation Service</h3>
+            <p>Optimized parking using coordinate rule engines.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">OptaPlanner</span>
+                <span class="tech-badge">Spring Boot</span>
+            </div>
+        </div>
+        <div class="spidey-card project-card">
+            <h3>End-to-End Encrypted Chat</h3>
+            <p>Secure messaging platform ensuring privacy.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Spring Boot</span>
+            </div>
+        </div>
+        <div class="spidey-card project-card">
+            <h3>Supermarket Microservices</h3>
+            <p>Scalable architecture for inventory & orders.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">Kafka</span>
+            </div>
+        </div>
+        <div class="spidey-card project-card">
+            <h3>Route Optimization System</h3>
+            <p>Delivery route efficiency and logistics.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">Angular</span>
+                <span class="tech-badge">Spring Boot</span>
+                <span class="tech-badge">OptaPlanner</span>
+            </div>
+        </div>
+        <div class="spidey-card project-card">
+            <h3>Travel Recommendation System</h3>
+            <p>Personalized travel suggestions using NLP.</p>
+            <div class="tech-badges">
+                <span class="tech-badge">NLP Research</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="spidey-footer">
+        <p>With great power comes great responsibility... to write clean code.</p>
+        <div class="spidey-social">
+            <a href="https://github.com/Clare06" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/claretes-nishoban-727036232" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
 </div>

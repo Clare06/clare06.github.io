@@ -1,24 +1,42 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // Load Content from JSON
+  fetch('data/content.json')
+    .then(response => response.json())
+    .then(data => {
+        const bioText = document.getElementById('bio-text');
+        if (bioText) {
+            bioText.innerText = data.bio;
+        }
+    })
+    .catch(error => console.error('Error loading content:', error));
+
   const bubbleContainer = document.getElementById("bubbleContainer");
   const containerWidth = bubbleContainer.offsetWidth;
   const containerHeight = bubbleContainer.offsetHeight;
-  const numberOfBubbles = 24; // Change this to the desired number of bubbles
-  const maxAnimationDelay = 30; // Change this to control the maximum delay in seconds
+  const numberOfBubbles = 24;
+  const maxAnimationDelay = 30;
 
   const colorOptions = ["#EAC444", "#345894", "#5CCFA5", "#CB3353", "#EC4B3A"];
   const bubbleNames = [
     { name: "Angular", size: "large" },
     { name: "Spring Boot", size: "large" },
-    { name: "GraphQL", size: "large" },
-    { name: "MySQL", size: "large" },
+    { name: "GraphQL", size: "medium" },
+    { name: "MySQL", size: "medium" },
+    { name: "Ionic", size: "medium" },
+    { name: "React", size: "large" },
+    { name: "NodeJS", size: "large" },
+    { name: "PostgreSQL", size: "medium" },
     { name: "Single-SPA", size: "medium" },
-    { name: "PHP", size: "medium" },
+    { name: "AWS", size: "medium" },
+    { name: "Docker", size: "small" },
+    { name: "Jenkins", size: "small" },
+    { name: "PHP", size: "small" },
     { name: "C", size: "small" },
     { name: "Java", size: "medium" },
     { name: "REST", size: "small" },
     { name: "JS", size: "small" },
-    { name: "NodeJS", size: "medium" },
-    { name: "React", size: "medium" }
+    { name: "Prisma", size: "small" },
+    { name: "Serenity", size: "small" }
   ];
 
   const bubbleSizes = {
@@ -27,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     large: 120
   };
 
-  // Function to generate a random position within the specified areas
   function getRandomPositionInAreas() {
     const area1Range = { min: containerWidth * 0.005, max: containerWidth * 0.1 };
     const area2Range = { min: containerWidth * 0.8, max: containerWidth * 0.95 };
@@ -42,30 +59,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const bubble = document.createElement("div");
     bubble.classList.add("bubble");
 
-    // Randomly select a color from the colorOptions array
     const randomColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
     bubble.style.backgroundColor = randomColor;
     
-    // Select a bubble size and corresponding name
     const nameIndex = i % bubbleNames.length;
     const bubbleName = bubbleNames[nameIndex].name;
     const bubbleSize = bubbleSizes[bubbleNames[nameIndex].size];
     bubble.style.width = `${bubbleSize}px`;
     bubble.style.height = `${bubbleSize}px`;
 
-    // Set bubble position
     const position = getRandomPositionInAreas();
     bubble.style.left = `${(position.x / containerWidth) * 100}%`;
-    bubble.style.bottom = `-${bubbleSize}px`; // Start from the bottom of the container
+    bubble.style.bottom = `-${bubbleSize}px`;
 
-    bubble.style.animationDirection = 'normal'; // Always move upwards
-    bubble.style.animationDelay = `${Math.random() * maxAnimationDelay}s`; // Random animation delay up to the specified maximum
-    bubble.innerText = bubbleName; // This line adds the name inside the bubble
+    bubble.style.animationDirection = 'normal';
+    bubble.style.animationDelay = `${Math.random() * maxAnimationDelay}s`;
+    bubble.innerText = bubbleName;
 
     bubbleContainer.appendChild(bubble);
   }
 });
 
+// Mobile Menu Toggle
+function toggleMenu() {
+  const menu = document.querySelector('.dropdown-content');
+  menu.classList.toggle('active');
+}
+
+// Ensure button click triggers it
+const dropBtn = document.querySelector('.dropbtn');
+if(dropBtn) {
+    dropBtn.addEventListener('click', toggleMenu);
+}
 
 
 const button = document.querySelector(".button");
@@ -76,71 +101,154 @@ button.addEventListener("click", function () {
     button.classList.remove("clicked");
   }, { once: true });
 });
-function openPopup() {
-  document.getElementById('popup').style.display = 'block';
+
+// Presentation Toggle Function
+function togglePresentations(element) {
+    const list = element.nextElementSibling;
+    const icon = element.querySelector('i');
+
+    element.classList.toggle('active');
+
+    if (list.style.display === "none") {
+        list.style.display = "block";
+        list.style.animation = "fadeIn 0.3s ease";
+    } else {
+        list.style.display = "none";
+    }
 }
 
-function closePopup() {
-  document.getElementById('popup').style.display = 'none';
-}
-function openPopup_rbro() {
-  document.getElementById('popup_rbro').style.display = 'block';
-}
 
-function closePopup_rbro() {
-  document.getElementById('popup_rbro').style.display = 'none';
-}
-function openPopup_esp() {
-  document.getElementById('popup_esp').style.display = 'block';
-}
+// Popup Functions
+function openPopup() { document.getElementById('popup').style.display = 'block'; }
+function closePopup() { document.getElementById('popup').style.display = 'none'; }
+function openPopup_rbro() { document.getElementById('popup_rbro').style.display = 'block'; }
+function closePopup_rbro() { document.getElementById('popup_rbro').style.display = 'none'; }
+function openPopup_esp() { document.getElementById('popup_esp').style.display = 'block'; }
+function closePopup_esp() { document.getElementById('popup_esp').style.display = 'none'; }
+function openPopup_chat() { document.getElementById('popup_chat').style.display = 'block'; }
+function closePopup_chat() { document.getElementById('popup_chat').style.display = 'none'; }
+function openPopup_sm() { document.getElementById('popup_sm').style.display = 'block'; }
+function closePopup_sm() { document.getElementById('popup_sm').style.display = 'none'; }
+function openPopup_park() { document.getElementById('popup_park').style.display = 'block'; }
+function closePopup_park() { document.getElementById('popup_park').style.display = 'none'; }
+function openPopup_travel() { document.getElementById('popup_travel').style.display = 'block'; }
+function closePopup_travel() { document.getElementById('popup_travel').style.display = 'none'; }
+function openPopup_test() { document.getElementById('popup_test').style.display = 'block'; }
+function closePopup_test() { document.getElementById('popup_test').style.display = 'none'; }
 
-function closePopup_esp() {
-  document.getElementById('popup_esp').style.display = 'none';
-}
-function openPopup_chat() {
-  document.getElementById('popup_chat').style.display = 'block';
-}
+// Spidey Theme Toggle Logic
+const spideyToggle = document.getElementById('spidey-toggle');
+const transitionOverlay = document.getElementById('transition-overlay');
+const glitchText = transitionOverlay.querySelector('.glitch-text');
+const mainContainer = document.getElementById('default-theme-container');
+let isSpideyMode = false;
+let professionalContent = null;
 
-function closePopup_chat() {
-  document.getElementById('popup_chat').style.display = 'none';
-}
-
-function openPopup_sm() {
-  document.getElementById('popup_sm').style.display = 'block';
-}
-
-function closePopup_sm() {
-  document.getElementById('popup_sm').style.display = 'none';
+if (spideyToggle) {
+    spideyToggle.addEventListener('click', triggerSpideyTransition);
 }
 
-let isOldContent = true;
-let oldContent = null;
-const toggleButton = document.getElementById('toggleButton');
-const container = document.getElementById('default-theme-container');
-const spiderWebButton = document.querySelector('.spider-web-button');
+function triggerSpideyTransition() {
+    // Show Overlay
+    transitionOverlay.classList.add('active');
 
-toggleButton.addEventListener('click', () => {
-    container.classList.add('hidden');
+    // Determine text based on current state (before toggle)
+    if (!isSpideyMode) {
+        glitchText.innerText = "Deactivating Professional Protocol...";
+        glitchText.setAttribute('data-text', "Deactivating Professional Protocol...");
 
-    setTimeout(() => {
-        if (isOldContent) {
-            oldContent = container.innerHTML;
+        // Start Pre-Load Strategy for Spidey Mode
+        loadAndTriggerSpideyEffect();
 
-            fetch('spidey-index-body.html')
-                .then(response => response.text())
-                .then(data => {
-                    container.innerHTML = data;
-                    spiderWebButton.style.backgroundImage = 'url("/images/back.png")'; 
-                    spiderWebButton.style.backgroundColor = '#F6E0E9';
-                    isOldContent = false;
-                    container.classList.remove('hidden');
-                })
-                .catch(error => console.error('Error loading content:', error));
-        } else {
-            container.innerHTML = oldContent;
-            spiderWebButton.style.backgroundImage = 'url("/images/1337090.jpeg")'; 
-            isOldContent = true;
-            container.classList.remove('hidden');
+        // Wait then change text to "Initiating Leap of Faith"
+        setTimeout(() => {
+            glitchText.innerText = "Initiating Leap of Faith...";
+            glitchText.setAttribute('data-text', "Initiating Leap of Faith...");
+        }, 1500);
+    } else {
+        glitchText.innerText = "Rebooting Professional Systems...";
+        glitchText.setAttribute('data-text', "Rebooting Professional Systems...");
+
+        // Simple delay for switching back
+        setTimeout(() => {
+            toggleSpideyTheme();
+             setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+        }, 2000);
+    }
+}
+
+function loadAndTriggerSpideyEffect() {
+    const existingScript = document.getElementById('spidey-script');
+
+    // Callback to run when script is ready
+    const onScriptReady = () => {
+        if (window.triggerTechGlitch) {
+            window.triggerTechGlitch();
         }
-    }, 250);
-});
+
+        // Wait 3.0s total for transition
+        setTimeout(() => {
+            toggleSpideyTheme();
+            setTimeout(() => { transitionOverlay.classList.remove('active'); }, 500);
+        }, 3000);
+    };
+
+    if (existingScript) {
+        onScriptReady();
+    } else {
+        const script = document.createElement('script');
+        script.src = 'js/spidey.js';
+        script.id = 'spidey-script';
+        script.onload = onScriptReady;
+        document.body.appendChild(script);
+    }
+}
+
+function toggleSpideyTheme() {
+    if (!isSpideyMode) {
+        // Switch TO Spidey Mode
+        if (!professionalContent) {
+            professionalContent = mainContainer.innerHTML;
+        }
+
+        fetch('spidey-index-body.html')
+            .then(response => response.text())
+            .then(data => {
+                mainContainer.innerHTML = data;
+                document.body.classList.add('spidey-mode');
+                spideyToggle.querySelector('i').className = "fas fa-user-tie"; // Change icon to tie
+                isSpideyMode = true;
+
+                // Initialize Animation Logic (Script is already loaded)
+                if (window.initSpideyTheme) {
+                    window.initSpideyTheme();
+                }
+            })
+            .catch(error => {
+                console.error('Error loading Spidey content:', error);
+                // Fallback if fetch fails
+                transitionOverlay.classList.remove('active');
+            });
+
+    } else {
+        // Switch BACK to Professional Mode
+        if (professionalContent) {
+            mainContainer.innerHTML = professionalContent;
+            document.body.classList.remove('spidey-mode');
+            spideyToggle.querySelector('i').className = "fas fa-spider"; // Change icon back to spider
+            isSpideyMode = false;
+
+            // Re-initialize scripts if needed (e.g. bubbles)
+            // Ideally, we should modularize the init code, but for now a simple reload might be safer or just basic restoration
+             window.location.reload(); // Reloading is cleaner to restore all listeners
+        }
+    }
+}
+
+// Spidey Mobile Menu Logic
+function toggleSpideyMenu() {
+    const menu = document.getElementById('spidey-menu');
+    if (menu) {
+        menu.classList.toggle('active');
+    }
+}
